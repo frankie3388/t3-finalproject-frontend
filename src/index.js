@@ -5,6 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CreateAccount from './pages/CreateAccountPage';
+import Login from './pages/LoginPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,6 +14,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/createaccount" element={<CreateAccount />} ></Route>
+        <Route path="/login" element={<Login />} ></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

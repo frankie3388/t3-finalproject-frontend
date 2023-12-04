@@ -4,9 +4,9 @@ import Col from 'react-bootstrap/Col';
 import '../styling/CreateAccountPage.css';
 import logo from '../docs/images/logo.png';
 import Image from 'react-bootstrap/Image';
-import CreateAccountForm from '../components/CreateAccountForm'
+import LoginForm from '../components/LoginForm'
 
-function CreateAccount() {
+function Login() {
   return (
     <div className="app-container">
       <Container fluid className="header">
@@ -25,13 +25,13 @@ function CreateAccount() {
         <Row>
           <Col className="create-account-title">
             {/* Your main content goes here */}
-            <h1>Create Account</h1>
+            <h1>Login</h1>
           </Col>
         </Row>
         <Row className="my-5 mx-auto form-container">
           <Col className="create-account">
             {/* Your main content goes here */}
-            <CreateAccountForm />
+            <LoginForm />
           </Col>
         </Row>
       </Container>
@@ -49,4 +49,4 @@ function CreateAccount() {
   );
 }
 
-export default CreateAccount;
+export default Login;

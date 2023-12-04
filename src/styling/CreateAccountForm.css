@@ -1,0 +1,22 @@
+@import "./utils/css-variables.css";
+
+.create-account-form {
+    background-color: #000000;
+    opacity: 79%;
+    padding: 30px 30px 2px 30px;
+    border-radius: 10px;
+}
+
+.label {
+    color: var(--primary-color);
+}
+
+button.create-button {
+    background-color: #FFA500;
+    border: solid #FFA500;
+}
+
+.create-account-form p {
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}

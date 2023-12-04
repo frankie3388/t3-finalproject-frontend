@@ -34,3 +34,15 @@
 .create-account-title {
   text-align: center;
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  max-height: 300px;
+  max-width: 600px;
+  margin-bottom: 50px; 
+}
