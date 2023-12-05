@@ -20,3 +20,10 @@ button.create-button {
     margin-bottom: 5px;
     color: var(--primary-color);
 }
+
+.createlink {
+    text-decoration: none;
+    color: var(--theme-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}

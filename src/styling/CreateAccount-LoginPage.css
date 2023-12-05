@@ -1,13 +1,13 @@
+/* This the the styling for the orange header at the top of the Create Account and Login Pages */
 .header {
-    border: 1px solid black;
     width: 100vw;
     height: 13vh;
     background-color: #FFA500;
     opacity: 0.58;
 }
 
+/* This the the styling for the orange footer at the bottom of the Create Account and Login Pages */
 .footer {
-    border: 1px solid black;
     width: 100vw;
     height: 20vh;
     background-color: #FFA500;
@@ -45,4 +45,8 @@
   max-height: 300px;
   max-width: 600px;
   margin-bottom: 50px; 
+}
+
+.create-account-title h1 {
+  font-weight: bold;
 }

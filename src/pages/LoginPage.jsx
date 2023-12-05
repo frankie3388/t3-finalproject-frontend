@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import '../styling/CreateAccountPage.css';
+import '../styling/CreateAccount-LoginPage.css';
 import logo from '../docs/images/logo.png';
 import Image from 'react-bootstrap/Image';
 import LoginForm from '../components/LoginForm'
@@ -35,7 +35,6 @@ function Login() {
           </Col>
         </Row>
       </Container>
-      
       <Container fluid className="footer">
         <Row>
           <Col>

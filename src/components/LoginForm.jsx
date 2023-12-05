@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import '../styling/CreateAccountForm.css';
+import '../styling/CreateAccount-LoginForm.css';
 
 function LoginForm() {
     return (
@@ -30,7 +30,7 @@ function LoginForm() {
           <Button type="submit" className="create-button">Sign in</Button>
         </Col>
       </Form.Group>
-      <p>Don't have an Account? Create one. Create Account</p>
+      <p>Don't have an Account? Create one. <a href="./CreateAccount" className="createlink">Create Account</a></p>
     </Form>
     )
 }
