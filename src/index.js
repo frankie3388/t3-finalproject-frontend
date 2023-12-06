@@ -7,14 +7,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CreateAccount from './pages/CreateAccountPage';
 import Login from './pages/LoginPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import BlogList from './pages/BlogListPage';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/createaccount" element={<CreateAccount />} ></Route>
         <Route path="/" element={<Login />} ></Route>
+        <Route path="/createaccount" element={<CreateAccount />} ></Route>
+        <Route path="/bloglist" element={<BlogList />} ></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

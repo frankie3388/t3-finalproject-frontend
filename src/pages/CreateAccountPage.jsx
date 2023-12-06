@@ -33,7 +33,6 @@ function CreateAccount() {
           </Col>
         </Row>
       </Container>
-      
       <Container fluid className="footer">
         <Row>
           <Col>
@@ -41,7 +40,6 @@ function CreateAccount() {
           </Col>
         </Row>
       </Container>
-      
     </div>
   );
 }
