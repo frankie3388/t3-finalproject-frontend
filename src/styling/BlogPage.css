@@ -1,0 +1,10 @@
+.blogpage-title {
+    color: var(--secondary-color);
+    margin: 40px 3% 0px 3%;
+    padding-bottom: 30px;
+    border-bottom: 1px solid black;
+}
+
+.blogpage-container {
+    margin-bottom: 90px;
+}

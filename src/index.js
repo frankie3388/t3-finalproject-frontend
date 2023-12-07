@@ -8,16 +8,21 @@ import CreateAccount from './pages/CreateAccountPage';
 import Login from './pages/LoginPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BlogList from './pages/BlogListPage';
+import Blog from './pages/BlogPage';
+import NavBar from './components/NavBar'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <NavBar />
       <Routes>
         <Route path="/" element={<Login />} ></Route>
         <Route path="/createaccount" element={<CreateAccount />} ></Route>
         <Route path="/bloglist" element={<BlogList />} ></Route>
+        <Route path="/blog" element={<Blog />} ></Route>
+        
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
