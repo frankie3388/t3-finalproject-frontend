@@ -1,0 +1,5 @@
+.userprofileform-container {
+    background-color: var(--theme-color);
+    opacity: 0.58;
+    color: var(--primary-color);
+}
