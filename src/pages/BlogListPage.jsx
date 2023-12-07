@@ -10,7 +10,7 @@ import NavBar from '../components/NavBar';
 
 function BlogList() {
     return (
-        <Container fluid className="app-header">
+        <Container fluid className="blog-list-container">
             <Header />
             <Row className="title-container">
                 <Col>

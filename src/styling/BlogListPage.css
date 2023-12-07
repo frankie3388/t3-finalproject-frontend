@@ -1,7 +1,7 @@
 @import './utils/css-variables.css';
 
 
-.app-header {
+.blog-list-container {
     margin-top: 20px;
     padding-right: 0px;
     padding-left: 0px;
@@ -9,7 +9,7 @@
 
 .bloglist-title {
     color: var(--secondary-color);
-    margin: 40px 0px 40px 40px;
+    margin: 40px 0px 30px 40px;
 }
 
 .title-container {
