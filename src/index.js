@@ -12,6 +12,7 @@ import Blog from './pages/BlogPage';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import UserProfile from './pages/UserProfilePage';
+import Dashboard from './pages/Dashboard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +26,7 @@ root.render(
         <Route path="/bloglist" element={<BlogList />} ></Route>
         <Route path="/blog" element={<Blog />} ></Route>
         <Route path="/userprofile" element={<UserProfile />} ></Route>
+        <Route path="/dashboard" element={<Dashboard />} ></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
