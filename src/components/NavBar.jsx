@@ -29,8 +29,8 @@ function NavBar() {
                 </NavLink>
             </Col>
             <Col className="navbar-item">
-                <NavLink className="navbar-link" to="/createpost" style={({isActive}) => isActive ? activeNavStyle : undefined}>
-                    <h6>Create Post</h6>
+                <NavLink className="navbar-link" to="/createblog" style={({isActive}) => isActive ? activeNavStyle : undefined}>
+                    <h6>Create Blog</h6>
                 </NavLink>
             </Col>
             <Col className="navbar-item">

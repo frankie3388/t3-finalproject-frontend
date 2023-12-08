@@ -1,0 +1,6 @@
+.create-blog-form {
+    background-color: var(--theme-color);
+    opacity: 0.58;
+    color: var(--primary-color);
+    margin: 50px;
+}
