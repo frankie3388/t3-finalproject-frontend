@@ -12,7 +12,6 @@ function Login() {
       <Container fluid className="header">
         <Row>
           <Col>
-            {/* Your main content goes here */}
           </Col>
         </Row>
       </Container>
@@ -24,13 +23,11 @@ function Login() {
         </Row>
         <Row>
           <Col className="create-account-title">
-            {/* Your main content goes here */}
             <h1>Login</h1>
           </Col>
         </Row>
         <Row className="my-5 mx-auto form-container">
           <Col className="create-account">
-            {/* Your main content goes here */}
             <LoginForm />
           </Col>
         </Row>
@@ -38,7 +35,6 @@ function Login() {
       <Container fluid className="footer">
         <Row>
           <Col>
-            {/* Your footer content goes here */}
             <p>&copy; 2023 Travelling Diary</p>
           </Col>
         </Row>
