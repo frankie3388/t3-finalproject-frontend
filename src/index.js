@@ -15,24 +15,27 @@ import UserProfile from './pages/UserProfilePage';
 import Dashboard from './pages/Dashboard';
 import CreateBlog from './pages/CreateBlogPage';
 import EditBlog from './pages/EditBlogPage';
+import AuthProvider from './context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Header />
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Login />} ></Route>
-        <Route path="/createaccount" element={<CreateAccount />} ></Route>
-        <Route path="/bloglist" element={<BlogList />} ></Route>
-        <Route path="/blog" element={<Blog />} ></Route>
-        <Route path="/userprofile" element={<UserProfile />} ></Route>
-        <Route path="/dashboard" element={<Dashboard />} ></Route>
-        <Route path="/createblog" element={<CreateBlog />} ></Route>
-        <Route path="/editblog" element={<EditBlog />} ></Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+          <Header />
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Login />} ></Route>
+            <Route path="/createaccount" element={<CreateAccount />} ></Route>
+            <Route path="/bloglist" element={<BlogList />} ></Route>
+            <Route path="/blog" element={<Blog />} ></Route>
+            <Route path="/userprofile" element={<UserProfile />} ></Route>
+            <Route path="/dashboard" element={<Dashboard />} ></Route>
+            <Route path="/createblog" element={<CreateBlog />} ></Route>
+            <Route path="/editblog" element={<EditBlog />} ></Route>
+          </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   </React.StrictMode>
 );
 
