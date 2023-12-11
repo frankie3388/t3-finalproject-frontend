@@ -59,7 +59,8 @@ function LoginForm() {
     
       <Form.Group as={Row} className="mb-3">
         <Col sm={{ span: 3, offset: 10 }}>
-        <Button onClick={ async () => {
+        <Button onClick={ async (event) => {
+          event.preventDefault();
           try {
             const jwtData = await login(email, password);
             updateJwt(jwtData); // Use the updateJwt function from context
