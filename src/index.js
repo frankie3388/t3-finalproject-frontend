@@ -16,25 +16,32 @@ import Dashboard from './pages/Dashboard';
 import CreateBlog from './pages/CreateBlogPage';
 import EditBlog from './pages/EditBlogPage';
 import AuthProvider from './context/AuthContext';
+import ApiProvider from './context/ApiContext';
+import BlogListByLocation from './pages/BlogListPageByLocation';
+import BlogListByUsername from './pages/BlogListPageByUsername';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthProvider>
-      <BrowserRouter>
+      <ApiProvider>
+        <BrowserRouter>
           <Header />
           <NavBar />
           <Routes>
             <Route path="/" element={<Login />} ></Route>
             <Route path="/createaccount" element={<CreateAccount />} ></Route>
             <Route path="/bloglist" element={<BlogList />} ></Route>
+            <Route path="/bloglist/location/:pokemonName" element={<BlogListByLocation />} ></Route>
+            <Route path="/bloglist/username/:pokemonName" element={<BlogListByUsername />} ></Route>
             <Route path="/blog" element={<Blog />} ></Route>
             <Route path="/userprofile" element={<UserProfile />} ></Route>
             <Route path="/dashboard" element={<Dashboard />} ></Route>
             <Route path="/createblog" element={<CreateBlog />} ></Route>
             <Route path="/editblog" element={<EditBlog />} ></Route>
           </Routes>
-      </BrowserRouter>
+        </BrowserRouter>
+      </ApiProvider> 
     </AuthProvider>
   </React.StrictMode>
 );
