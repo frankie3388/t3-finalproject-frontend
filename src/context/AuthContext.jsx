@@ -5,7 +5,7 @@ import { useState } from 'react';
 export const AuthContext = createContext();
 
 const AuthProvider = (props) => {
-    const [jwt, setJwt] = useState("2");
+    const [jwt, setJwt] = useState("");
   
     const updateJwt = (newJwt) => {
       setJwt(newJwt);
