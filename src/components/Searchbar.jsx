@@ -10,7 +10,7 @@ function Searchbar() {
 
 	const handleSubmit = (event) => {
 		console.log(input);
-        navigate('/bloglist/location/' + input)
+        navigate('/bloglist/username/' + input)
 	}
 
     return (
