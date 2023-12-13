@@ -17,22 +17,22 @@ function BlogListByLocation() {
 	const {api} = useContext(ApiContext);
 
 	// route param for the pokemon name 
-	const {pokemonName} = useParams();
+	const {location} = useParams();
 
 	// api key 
-    let apiKey = process.env.REACT_APP_API_KEY;
+    // let apiKey = process.env.REACT_APP_API_KEY;
 
 	useEffect(() => {
 		console.log("Card search component has mounted! Making a fetch request now...");
 
 		async function apiRequest(){
 			let queryParams = new URLSearchParams({
-				q: 'name:' + pokemonName
+				q: 'locationname:' + location
 			})
-			let response = await fetch(api + 'cards?' + queryParams, {
-				headers: {
-					'X-Api-Key': apiKey
-				}
+			let response = await fetch(api + 'Blog?' + queryParams, {
+				// headers: {
+				// 	'X-Api-Key': apiKey
+				// }
 			});
 
 			let responseData = await response.json();
@@ -44,13 +44,13 @@ function BlogListByLocation() {
 		apiRequest();
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [pokemonName]);
+	}, [location]);
 
     return (
         <Container fluid className="blog-list-container">
             <Row className="title-container">
                 <Col>
-                <h2 className="bloglist-title">Blog List - {pokemonName}</h2>
+                <h2 className="bloglist-title">Blog List - {location}</h2>
                 </Col>
             </Row>
             <BlogCard />

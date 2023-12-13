@@ -2,7 +2,7 @@ async function create(username, password){
     console.log(username, password);
 
     let result = await fetch(
-      process.env.REACT_APP_BACKEND_URL + "/users/",
+      process.env.BACKEND_URL_PUBLIC + "/users/",
       {
         method: "POST",
         headers: {
