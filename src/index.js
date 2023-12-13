@@ -32,8 +32,8 @@ root.render(
             <Route path="/" element={<Login />} ></Route>
             <Route path="/createaccount" element={<CreateAccount />} ></Route>
             <Route path="/bloglist" element={<BlogList />} ></Route>
-            <Route path="/bloglist/location/:pokemonName" element={<BlogListByLocation />} ></Route>
-            <Route path="/bloglist/username/:pokemonName" element={<BlogListByUsername />} ></Route>
+            <Route path="/bloglist/location/:location" element={<BlogListByLocation />} ></Route>
+            <Route path="/bloglist/username/:location" element={<BlogListByUsername />} ></Route>
             <Route path="/blog" element={<Blog />} ></Route>
             <Route path="/userprofile" element={<UserProfile />} ></Route>
             <Route path="/dashboard" element={<Dashboard />} ></Route>

@@ -2,7 +2,7 @@ async function login(username, password){
     console.log(username, password);
 
     let result = await fetch(
-      process.env.REACT_APP_BACKEND_URL + "/users/login",
+      process.env.BACKEND_URL_PUBLIC + "/users/login",
       {
         method: "POST",
         headers: {
