@@ -26,12 +26,13 @@
   flex: 1; /* This makes the main content take all available vertical space */
 }
 
-.footer {
+/* .footer {
   background-color: #FFA500;
   opacity: 0.58;
-  padding: 20px; /* Optional: Add padding to the footer */
-  margin-top: auto; /* This pushes the footer to the bottom of the container */
-}
+  padding: 20px; Optional: Add padding to the footer */
+  /* margin-bottom: auto;  */
+  /* display: relative; */
+/* } */
 
 .create-account-title {
   text-align: center;
@@ -44,7 +45,7 @@
 }
 
 .form-container {
-  max-height: 300px;
+  max-height: 800px;
   max-width: 600px;
   margin-bottom: 50px; 
 }
