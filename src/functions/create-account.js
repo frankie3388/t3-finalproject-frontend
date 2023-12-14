@@ -1,5 +1,5 @@
-async function create(username, password){ 
-    console.log(username, password);
+async function create(email, password){ 
+    console.log(email, password);
 
     let result = await fetch(
       process.env.BACKEND_URL_PUBLIC + "/users/",
@@ -8,7 +8,7 @@ async function create(username, password){
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({username: username, password: password}),
+        body: JSON.stringify({email: email, password: password}),
       }
     );
 

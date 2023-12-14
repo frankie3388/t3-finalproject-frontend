@@ -1,5 +1,5 @@
-async function login(username, password){ 
-    console.log(username, password);
+async function login(email, password){ 
+    console.log(email, password);
 
     let result = await fetch(
       process.env.BACKEND_URL_PUBLIC + "/users/login",
@@ -8,7 +8,7 @@ async function login(username, password){
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({username: username, password: password}),
+        body: JSON.stringify({email: email, password: password}),
       }
     );
 
