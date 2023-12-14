@@ -11,17 +11,14 @@ import { useParams } from "react-router-dom";
 
 
 function BlogListByUsername() {
-      // search results 
+    // search results 
 	const [searchResults, setSearchResults] = useState([]);
 
 	// api URL 
 	const {api} = useContext(ApiContext);
 
-	// route param for the pokemon name 
-	const {location} = useParams();
-
-	// api key 
-    // let apiKey = process.env.REACT_APP_API_KEY;
+	// route param for the username 
+	const {username} = useParams();
 
 	useEffect(() => {
 		console.log("Card search component has mounted! Making a fetch request now...");
@@ -30,7 +27,7 @@ function BlogListByUsername() {
 			// let queryParams = new URLSearchParams({
 			// 	q: 'locationname:' + location
 			// })
-			let response = await fetch(api);
+			let response = await fetch(api + "/blogs/username");
 
 			let responseData = await response.json();
 
@@ -41,13 +38,13 @@ function BlogListByUsername() {
 		apiRequest();
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [location]);
+	}, [username]);
 
     return (
         <Container fluid className="blog-list-container">
             <Row className="title-container">
                 <Col>
-                <h2 className="bloglist-title">Blog List - Username</h2>
+                <h2 className="bloglist-title">Blog List - {username}</h2>
                 </Col>
             </Row>
             <BlogCard />

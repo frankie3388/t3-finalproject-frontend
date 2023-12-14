@@ -10,6 +10,7 @@ function CreateBlogForm() {
   // api URL 
 	const {api} = useContext(ApiContext);
 
+  // This handleSubmit function Posts the form data to the server to create the blog
   const handleSubmit = async (event) => {
       event.preventDefault();
       

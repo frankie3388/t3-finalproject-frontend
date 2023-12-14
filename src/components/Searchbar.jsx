@@ -10,14 +10,21 @@ function Searchbar() {
 
 	const handleSubmit = (event) => {
 		console.log(input);
-        navigate('/bloglist/username/' + input)
+
+        if (input[0] === "@") {
+            // Treat it as a username, the input.substring(1) removes the "@"
+            navigate('/bloglist/username/' + input.substring(1));
+        } else {
+            // Treat it as a location
+            navigate('/bloglist/location/' + input);
+        }
 	}
 
     return (
         <div className="searchbar-container">
             
             <input 
-                placeholder="Search blogs by username or location" 
+                placeholder="Search blogs by @username or location" 
                 className="searchbar-input"
                 type="text"
                 name="searchField" 
