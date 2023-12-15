@@ -6,11 +6,14 @@ import '../styling/CreateAccount-LoginForm.css';
 import { login } from '../functions/login';
 import { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
 
+  const navigate = useNavigate();
+
   // Destructure the context data object
-  const { jwt, updateJwt } = useContext(AuthContext);
+  const { jwt, loginJwt } = useContext(AuthContext);
 
   // local form's state
   const [email, setEmail] = useState("");
@@ -63,7 +66,15 @@ function LoginForm() {
           event.preventDefault();
           try {
             const jwtData = await login(email, password);
-            updateJwt(jwtData); // Use the updateJwt function from context
+      
+            if (jwtData.jwt) {
+              // If login is successful, data.jwt will contain the JWT token
+              loginJwt(jwtData.jwt);
+              navigate("/bloglist");
+            } else if (jwtData.message) {
+              console.error("Login failed:", jwtData.message);
+              alert(`Login failed: ${jwtData.message}`);
+            }
           } catch (error) {
             console.error("Error during login:", error);
           }

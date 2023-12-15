@@ -7,6 +7,7 @@ import BlogCard from '../components/BlogCard';
 
 
 function BlogList() {
+    
     return (
         <Container fluid className="blog-list-container">
             <Row className="title-container">

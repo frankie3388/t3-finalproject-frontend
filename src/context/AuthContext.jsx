@@ -7,12 +7,16 @@ export const AuthContext = createContext();
 const AuthProvider = (props) => {
     const [jwt, setJwt] = useState("");
   
-    const updateJwt = (newJwt) => {
+    const loginJwt = (newJwt) => {
       setJwt(newJwt);
+    };
+
+    const logoutJwt = () => {
+      setJwt(null);
     };
   
     return (
-      <AuthContext.Provider value={{ jwt, updateJwt }}>
+      <AuthContext.Provider value={{ jwt, loginJwt, logoutJwt }}>
         {props.children}
       </AuthContext.Provider>
     );
