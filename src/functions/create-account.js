@@ -2,7 +2,7 @@ async function create(email, password, firstName, lastName, username, regionsOfI
     console.log(email, password, firstName, lastName, username, regionsOfInterest, countriesOfInterest, isAdmin);
 
     let result = await fetch(
-      process.env.BACKEND_URL_PUBLIC + "/users/",
+      process.env.REACT_APP_BACKEND_URL + "/users/createuser",
       {
         method: "POST",
         headers: {
@@ -16,7 +16,7 @@ async function create(email, password, firstName, lastName, username, regionsOfI
           email: email,
           regionsOfInterest: regionsOfInterest,
           countriesOfInterest: countriesOfInterest,
-          isadmin: isAdmin
+          isAdmin: isAdmin
         }),
       }
     );
