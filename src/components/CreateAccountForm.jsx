@@ -5,8 +5,11 @@ import Row from 'react-bootstrap/Row';
 import '../styling/CreateAccount-LoginForm.css';
 import { useEffect, useState } from 'react';
 import { create } from '../functions/create-account';
+import { useNavigate } from 'react-router-dom';
 
 function CreateAccountForm() {
+
+  const navigate = useNavigate();
 
     // local form's state
     const [user, setUser] = useState(null);
@@ -131,7 +134,14 @@ function CreateAccountForm() {
           </Button>
         </Col>
       </Form.Group>
-      <p>Already have an account? <a href="./" className="createlink">Login</a></p>
+      <p>Already have an account?{' '}
+        <span
+          className="createlink"
+          onClick={() => navigate('/')}
+        >
+          Login
+        </span>
+      </p>
     </Form>
     )
 }
