@@ -1,6 +1,7 @@
 async function login(email, password){ 
 
     let result = await fetch(
+      // need to change this to 'api' from ApiContext once in production
       process.env.REACT_APP_BACKEND_URL + "/users/login",
       {
         method: "POST",

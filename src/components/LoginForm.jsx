@@ -86,7 +86,15 @@ function LoginForm() {
           </Button>
         </Col>
       </Form.Group>
-      <p>Don't have an Account? Create one. <a href="./createaccount" className="createlink">Create Account</a></p>
+      <p>
+        Don't have an Account? Create one.{' '}
+        <span
+          className="createlink"
+          onClick={() => navigate('/createaccount')}
+        >
+          Create Account
+        </span>
+      </p>
     </Form>
   )
 }
