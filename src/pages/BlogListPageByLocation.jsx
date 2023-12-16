@@ -10,7 +10,7 @@ import { useParams } from "react-router-dom";
 
 
 function BlogListByLocation() {
-      // search results 
+    // search results 
 	const [searchResults, setSearchResults] = useState([]);
 
 	// api URL 
