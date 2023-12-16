@@ -16,29 +16,26 @@ function BlogListByLocation() {
 	// api URL 
 	const {api} = useContext(ApiContext);
 
-	// route param for the pokemon name 
+	// route param for the location name 
 	const {location} = useParams();
-
-	// api key 
-    // let apiKey = process.env.REACT_APP_API_KEY;
 
 	useEffect(() => {
 		console.log("Card search component has mounted! Making a fetch request now...");
 
-		async function apiRequest(){
-			let queryParams = new URLSearchParams({
-				q: 'locationname:' + location
-			})
-			let response = await fetch(api + 'Blog?' + queryParams, {
-				// headers: {
-				// 	'X-Api-Key': apiKey
-				// }
-			});
-
-			let responseData = await response.json();
-
-			setSearchResults(responseData.data);
-			console.log(searchResults)
+		async function apiRequest() {
+			try {
+				let queryParams = new URLSearchParams({
+					locationToFilterBy: location,
+				});
+		
+				let response = await fetch(api + '/blog/multiple/location?' + queryParams);
+				let responseData = await response.json();
+		
+				setSearchResults(responseData.data);
+				console.log(searchResults);
+			} catch (error) {
+				console.error("Error fetching blogs:", error);
+			}
 		}
 
 		apiRequest();
@@ -53,8 +50,36 @@ function BlogListByLocation() {
                 <h2 className="bloglist-title">Blog List - {location}</h2>
                 </Col>
             </Row>
-            <BlogCard />
-            <SmallBlogCard />
+            {searchResults && searchResults.length > 0 && 
+            <Row className="large-cards">
+                {/* display only the first two blog records */}
+                {searchResults.slice(0, 2).map(result => {
+                    return <Col xs={11} sm={5} lg={5} className="cards">
+                    <BlogCard 
+                        key={result._id}
+                        username={result.user.username}
+                        title={result.title}
+                        locationcity={result.locationcity}
+                    />
+                    </Col>
+                })}
+            </Row>
+            }
+            {searchResults && searchResults.length > 0 && 
+            <Row xs={2} md={4} className="small-cards-container">
+                {/* display all searchResults after the first two */}
+                {searchResults.slice(2).map(result => {
+                    return <Col>
+                    <SmallBlogCard 
+                        key={result._id}
+                        username={result.user.username}
+                        title={result.title}
+                        locationcity={result.locationcity}
+                    />
+                    </Col>
+                })}
+            </Row>
+            }
         </Container>
     )
 }
