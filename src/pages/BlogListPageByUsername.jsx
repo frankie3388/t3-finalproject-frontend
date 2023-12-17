@@ -26,9 +26,11 @@ function BlogListByUsername() {
 		async function apiRequest() {
 			try {
 				let queryParams = new URLSearchParams({
-					q: 'username:' + username
+					q: 'user.username:' + username
 				});
-		
+
+                console.log("Fetch URL:", api + '/blog/multiple/username?' + queryParams); // Log the complete URL for debugging
+
 				let response = await fetch(api + '/blog/multiple/username?' + queryParams);
 				let responseData = await response.json();
 		
@@ -57,7 +59,7 @@ function BlogListByUsername() {
                 {searchResults.slice(0, 2).map(result => {
                     return <Col xs={11} sm={5} lg={5} className="cards">
                     <BlogCard 
-                        key={result._id}
+                        id={result._id}
                         username={result.user.username}
                         title={result.title}
                         locationcity={result.locationcity}

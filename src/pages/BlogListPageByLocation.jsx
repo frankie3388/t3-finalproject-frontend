@@ -30,6 +30,7 @@ function BlogListByLocation() {
 		
 				let response = await fetch(api + '/blog/multiple/location?' + queryParams);
 				let responseData = await response.json();
+                // console.log(responseData)
 		
 				setSearchResults(responseData.data);
 				console.log(searchResults);
@@ -56,7 +57,7 @@ function BlogListByLocation() {
                 {searchResults.slice(0, 2).map(result => {
                     return <Col xs={11} sm={5} lg={5} className="cards">
                     <BlogCard 
-                        key={result._id}
+                        id={result._id}
                         username={result.user.username}
                         title={result.title}
                         locationcity={result.locationcity}
