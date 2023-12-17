@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 function BlogCard(props) {
+  console.log("Username:", props.username);
 
   return (
       <Link to={`/blog/${props.id}`}>
