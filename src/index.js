@@ -34,7 +34,7 @@ root.render(
             <Route path="/bloglist" element={<BlogList />} ></Route>
             <Route path="/bloglist/location/:location" element={<BlogListByLocation />} ></Route>
             <Route path="/bloglist/username/:username" element={<BlogListByUsername />} ></Route>
-            <Route path="/blog" element={<Blog />} ></Route>
+            <Route path="/blog/:id" element={<Blog />} ></Route>
             <Route path="/userprofile" element={<UserProfile />} ></Route>
             <Route path="/dashboard" element={<Dashboard />} ></Route>
             <Route path="/createblog" element={<CreateBlog />} ></Route>

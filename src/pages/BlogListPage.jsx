@@ -53,7 +53,7 @@ function BlogList() {
                 {blogs.slice(0, 2).map(result => {
                     return <Col xs={11} sm={5} lg={5} className="cards">
                     <BlogCard 
-                        key={result._id}
+                        id={result._id}
                         username={result.user.username}
                         title={result.title}
                         locationcity={result.locationcity}
