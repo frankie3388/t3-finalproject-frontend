@@ -7,6 +7,7 @@ import BlogCard from '../components/BlogCard';
 import { useContext, useEffect, useState } from "react";
 import { ApiContext } from "../context/ApiContext";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 
 function BlogListByLocation() {
@@ -15,6 +16,9 @@ function BlogListByLocation() {
 
 	// api URL 
 	const {api} = useContext(ApiContext);
+
+    // jwt token 
+	const {jwt} = useContext(AuthContext);
 
 	// route param for the location name 
 	const {location} = useParams();
@@ -28,7 +32,12 @@ function BlogListByLocation() {
 					locationToFilterBy: location,
 				});
 		
-				let response = await fetch(api + '/blog/multiple/location?' + queryParams);
+				let response = await fetch(api + '/blog/multiple/location?' + queryParams, {
+                    method: "GET",
+                    headers: {
+                      "Authorization": jwt
+                    }
+                });
 				let responseData = await response.json();
                 // console.log(responseData)
 		
