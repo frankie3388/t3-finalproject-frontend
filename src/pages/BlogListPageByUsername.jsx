@@ -7,6 +7,7 @@ import BlogCard from '../components/BlogCard';
 import { useContext, useEffect, useState } from "react";
 import { ApiContext } from "../context/ApiContext";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 
 
@@ -16,6 +17,9 @@ function BlogListByUsername() {
 
 	// api URL 
 	const {api} = useContext(ApiContext);
+
+    // jwt token 
+	const {jwt} = useContext(AuthContext);
 
 	// route param for the username 
 	const {username} = useParams();
@@ -29,7 +33,12 @@ function BlogListByUsername() {
                     q: username
                   });
 
-				let response = await fetch(api + '/blog/multiple/username?' + queryParams);
+				let response = await fetch(api + '/blog/multiple/username?' + queryParams, {
+                    method: "GET",
+                    headers: {
+                      "Authorization": jwt
+                    }
+                });
 				let responseData = await response.json();
 		
 				setSearchResults(responseData.data);

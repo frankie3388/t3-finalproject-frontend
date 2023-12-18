@@ -6,6 +6,7 @@ import SmallBlogCard from '../components/SmallBlogCard';
 import BlogCard from '../components/BlogCard';
 import { useContext, useEffect, useState } from "react";
 import { ApiContext } from "../context/ApiContext";
+import { AuthContext } from "../context/AuthContext";
 
 
 function BlogList() {
@@ -16,12 +17,20 @@ function BlogList() {
     // api URL 
 	const {api} = useContext(ApiContext);
 
+    // jwt token
+	const {jwt} = useContext(AuthContext);
+
     useEffect(() => {
 		console.log("Card search component has mounted! Making a fetch request now...");
 
 		async function apiRequest(){
 			try {
-                let response = await fetch(api + "/blog/all");
+                let response = await fetch(api + "/blog/all", {
+                    method: "GET",
+                    headers: {
+                      "Authorization": jwt
+                    }
+                });
           
                 if (!response.ok) {
                    throw new Error(`HTTP error! Status: ${response.status}`);
