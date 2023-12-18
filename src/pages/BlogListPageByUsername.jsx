@@ -25,17 +25,15 @@ function BlogListByUsername() {
 
 		async function apiRequest() {
 			try {
-				let queryParams = new URLSearchParams({
-					q: 'user.username:' + username
-				});
-
-                console.log("Fetch URL:", api + '/blog/multiple/username?' + queryParams); // Log the complete URL for debugging
+                let queryParams = new URLSearchParams({
+                    q: username
+                  });
 
 				let response = await fetch(api + '/blog/multiple/username?' + queryParams);
 				let responseData = await response.json();
 		
 				setSearchResults(responseData.data);
-				console.log(searchResults);
+				// console.log(searchResults);
 			} catch (error) {
 				console.error("Error fetching blogs:", error);
 			}
@@ -74,7 +72,7 @@ function BlogListByUsername() {
                 {searchResults.slice(2).map(result => {
                     return <Col>
                     <SmallBlogCard 
-                        key={result._id}
+                        id={result._id}
                         username={result.user.username}
                         title={result.title}
                         locationcity={result.locationcity}

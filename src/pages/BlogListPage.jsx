@@ -68,7 +68,7 @@ function BlogList() {
                 {blogs.slice(2).map(result => {
                     return <Col>
                     <SmallBlogCard 
-                        key={result._id}
+                        id={result._id}
                         username={result.user.username}
                         title={result.title}
                         locationcity={result.locationcity}
