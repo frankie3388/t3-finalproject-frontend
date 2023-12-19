@@ -3,6 +3,7 @@ import '../styling/components/CreateBlogForm.css';
 import Button from 'react-bootstrap/Button';
 import { useState, useContext } from 'react';
 import { ApiContext } from "../context/ApiContext";
+import { AuthContext } from "../context/AuthContext";
 
 function CreateBlogForm() {
   // useState for the imagedata
@@ -11,6 +12,9 @@ function CreateBlogForm() {
 
   // api URL 
 	const {api} = useContext(ApiContext);
+
+  // jwt token 
+	const {jwt} = useContext(AuthContext);
 
   // This handleSubmit function Posts the form data to the server to create the blog
   const handleSubmit = async (event) => {
@@ -27,36 +31,33 @@ function CreateBlogForm() {
         body: event.target.elements.body.value,
         tags: event.target.elements.tags.value,
       };
-
+  
       // Create FormData for image submission
       const formData = new FormData();
       formData.append("image", photo);
       formData.append("caption", caption);
-
-      // Post image data to server and S3
-      await fetch(api + "/blog/image", {
+  
+      // Append blog data to FormData
+      for (const key in blogData) {
+        formData.append(key, blogData[key]);
+      }
+  
+      // Post image data and blog data to server and S3
+      const response = await fetch(api + "/blog/image", {
         method: 'POST',
         body: formData,
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
-
-      // Post blog data to server
-      const response = await fetch(api + "/blog", {
-        method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          "Authorization": jwt,
+          // Do not set Content-Type header explicitly, let the browser handle it
         },
-        body: JSON.stringify({
-          ...blogData,
-          imagedata: photo.name, // Assuming photo.name is a unique identifier for the image
-        }),
       });
-
+  
       if (response.ok) {
-        console.log("Blog posted successfully");
+        console.log("Image and blog data posted successfully");
+        // Additional logic if needed
       } else {
+        console.error('Failed to post image and blog data:', response.statusText);
         // Handle error
-        console.error('Failed to post blog');
       }
     } catch (error) {
       console.error('Error:', error);
@@ -91,7 +92,7 @@ function CreateBlogForm() {
             </Form.Group>
             <Form.Group className="mb-3" controlId="tags">
               <Form.Label>Tags</Form.Label>
-              <Form.Control type="text" name="tags" placeholder="Enter region" />
+              <Form.Control type="text" name="tags" placeholder="Enter tags" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="body">
               <Form.Label>Description</Form.Label>

@@ -38,7 +38,7 @@ root.render(
             <Route path="/userprofile" element={<UserProfile />} ></Route>
             <Route path="/dashboard" element={<Dashboard />} ></Route>
             <Route path="/createblog" element={<CreateBlog />} ></Route>
-            <Route path="/editblog" element={<EditBlog />} ></Route>
+            <Route path="/editblog/:id" element={<EditBlog />} ></Route>
           </Routes>
         </BrowserRouter>
       </ApiProvider> 
