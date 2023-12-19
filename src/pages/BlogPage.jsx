@@ -64,14 +64,14 @@ function Blog() {
             {blogs &&
                 <>
                <BlogDetails 
-                    key={blogs._id}  // Make sure to include a unique key for the single item
+                    id={blogs._id}  // Make sure to include a unique key for the single item
                     username={blogs.user.username}
                     title={blogs.title}
                     location={blogs.locationcity}
                     description={blogs.body}
                 />
                     
-                    <LikeEditDeleteBlog />
+                    <LikeEditDeleteBlog blogId={blogs._id}/>
                     <CommentsSection />
                     <GoogleMaps />
                     <NavBar />
