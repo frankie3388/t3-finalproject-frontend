@@ -29,7 +29,6 @@ function CreateBlogForm() {
         locationcity: event.target.elements.locationcity.value,
         locationcountry: event.target.elements.locationcountry.value,
         body: event.target.elements.body.value,
-        tags: event.target.elements.tags.value,
       };
   
       // Create FormData for image submission
@@ -89,10 +88,6 @@ function CreateBlogForm() {
             <Form.Group className="mb-3" controlId="locationcountry">
               <Form.Label>Country</Form.Label>
               <Form.Control type="text" name="locationcountry" placeholder="Enter country" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="tags">
-              <Form.Label>Tags</Form.Label>
-              <Form.Control type="text" name="tags" placeholder="Enter tags" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="body">
               <Form.Label>Description</Form.Label>

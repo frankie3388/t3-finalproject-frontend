@@ -66,6 +66,7 @@ function BlogList() {
                         username={result.user.username}
                         title={result.title}
                         locationcity={result.locationcity}
+                        image={result.imageUrl}
                     />
                     </Col>
                 })}
@@ -81,6 +82,7 @@ function BlogList() {
                         username={result.user.username}
                         title={result.title}
                         locationcity={result.locationcity}
+                        image={result.imageUrl}
                     />
                     </Col>
                 })}
