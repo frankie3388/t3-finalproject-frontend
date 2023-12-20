@@ -69,9 +69,13 @@ function Blog() {
                     title={blogs.title}
                     location={blogs.locationcity}
                     description={blogs.body}
+                    image={blogs.imageUrl}
                 />
                     
-                    <LikeEditDeleteBlog blogId={blogs._id}/>
+                    <LikeEditDeleteBlog 
+                        blogId={blogs._id}
+                        userId={blogs.user._id}
+                    />
                     <CommentsSection />
                     <GoogleMaps />
                     <NavBar />

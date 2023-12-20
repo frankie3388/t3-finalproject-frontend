@@ -70,6 +70,7 @@ function BlogListByUsername() {
                         username={result.user.username}
                         title={result.title}
                         locationcity={result.locationcity}
+                        image={result.imageUrl}
                     />
                     </Col>
                 })}
@@ -85,6 +86,7 @@ function BlogListByUsername() {
                         username={result.user.username}
                         title={result.title}
                         locationcity={result.locationcity}
+                        image={result.imageUrl}
                     />
                     </Col>
                 })}

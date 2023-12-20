@@ -11,3 +11,8 @@
     color: var(--primary-color);
 }
 
+.small-blog-card .image {
+    height: 160px;
+    object-fit: cover;
+    width: 100%;
+}

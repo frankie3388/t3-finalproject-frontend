@@ -23,19 +23,19 @@ function BlogDetails(props) {
             <Col xs={12} lg={6}>
                 <Card.Img
                     className="image"
-                    src="https://images.unsplash.com/photo-1682695795255-b236b1f1267d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src={props.image}
                     />
                     <Row>
                         <Col>
                             <Card.Img
                             className="image"
-                            src="https://images.unsplash.com/photo-1682695795255-b236b1f1267d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            src={props.image}
                             />
                         </Col>
                         <Col>
                             <Card.Img
                             className="image"
-                            src="https://images.unsplash.com/photo-1682695795255-b236b1f1267d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            src={props.image}
                             />
                         </Col>
                     </Row>
