@@ -24,7 +24,7 @@ function EditBlog() {
 
 		async function apiRequest() {
 			try {
-				let response = await fetch(api + '/blog/' + id, {
+				let response = await fetch(api + '/blog/image/' + id, {
                     method: "PATCH",
                     headers: {
                       "Authorization": jwt
@@ -47,10 +47,10 @@ function EditBlog() {
     return (
         
         <div>
-            {blog && 
+            {blog && blog.user  ? (
             <>
-                <h3>Edit Blog</h3>
-                <h5>Username</h5>
+                <h3>Edit Blog Id - {id}</h3>
+                <h5>{blog.user.username}</h5>
                 <EditBlogForm 
                     title={blog.title}
                     locationName={blog.locationname}
@@ -59,9 +59,10 @@ function EditBlog() {
                     country={blog.locationcountry}
                     description={blog.body}
                 />
-            </> 
-            }
-            
+            </>
+        ) : (
+            <h1>{blog}</h1>
+        )}
         </div>
     )
 }
