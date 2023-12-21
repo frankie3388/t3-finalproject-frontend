@@ -27,7 +27,7 @@ function EditBlogForm(props) {
       event.preventDefault();
   
       try {
-        // Create blog data
+        // Edit blog data
         const blogData = {
           title: event.target.elements.title.value,
           locationname: event.target.elements.locationname.value,
