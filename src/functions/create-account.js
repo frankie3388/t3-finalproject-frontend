@@ -1,9 +1,11 @@
 async function create(email, password, firstName, lastName, username, regionsOfInterest, countriesOfInterest, isAdmin=false){ 
     console.log(email, password, firstName, lastName, username, regionsOfInterest, countriesOfInterest, isAdmin);
 
+    const publicUrl = "https://travelling-diary-app-e5215403a509.herokuapp.com";
+
     let result = await fetch(
       // need to change this to 'api' from ApiContext once in production
-      process.env.BACKEND_URL_PUBLIC + "/users/createuser",
+      publicUrl + "/users/createuser",
       {
         method: "POST",
         headers: {
