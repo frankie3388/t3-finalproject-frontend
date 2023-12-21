@@ -3,7 +3,7 @@ async function create(email, password, firstName, lastName, username, regionsOfI
 
     let result = await fetch(
       // need to change this to 'api' from ApiContext once in production
-      process.env.REACT_APP_BACKEND_URL + "/users/createuser",
+      process.env.BACKEND_URL_PUBLIC + "/users/createuser",
       {
         method: "POST",
         headers: {

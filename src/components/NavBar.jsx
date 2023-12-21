@@ -3,8 +3,12 @@ import Col from 'react-bootstrap/Col';
 import '../styling/components/NavBar.css'
 import { useLocation } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 function NavBar() {
+
+    const { logoutJwt } = useContext(AuthContext);
 
     let activeNavStyle = {
         textDecorationThickness: 4,
@@ -20,10 +24,15 @@ function NavBar() {
         return null;
     }
 
+    const handleLogout = () => {
+        // Call the logoutJwt function when the "Log Out" link is clicked
+        logoutJwt();
+      };
+
     return (
         <Row xs={5} className="navbar-container">
             <Col className="navbar-item">
-                <NavLink className="navbar-link" to="/" style={({isActive}) => isActive ? activeNavStyle : undefined}>
+                <NavLink className="navbar-link" onClick={handleLogout} to="/" style={({isActive}) => isActive ? activeNavStyle : undefined}>
                     <h6>Log Out</h6>
                 </NavLink>
             </Col>
