@@ -1,8 +1,9 @@
 async function login(email, password){ 
+    const publicUrl = "https://travelling-diary-app-e5215403a509.herokuapp.com";
 
     let result = await fetch(
       // need to change this to 'api' from ApiContext once in production
-      process.env.BACKEND_URL_PUBLIC + "/users/login",
+      publicUrl + "/users/login",
       {
         method: "POST",
         headers: {
