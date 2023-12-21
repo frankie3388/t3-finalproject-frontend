@@ -40,7 +40,6 @@ function UserProfileForm(props) {
             headers: {
               "Authorization": jwt,
               "Content-Type": "application/json",
-              // Do not set Content-Type header explicitly, let the browser handle it
             },
           });
       

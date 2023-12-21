@@ -58,10 +58,10 @@ function EditBlogForm(props) {
         });
     
         if (response.ok) {
-          console.log("Image and blog data posted successfully");
+          console.log("Image and blog data edited successfully");
           // Additional logic if needed
         } else {
-          console.error('Failed to post image and blog data:', response.statusText);
+          console.error('Failed to edit image and blog data:', response.statusText);
           // Handle error
         }
       } catch (error) {
