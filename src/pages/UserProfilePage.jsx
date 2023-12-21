@@ -1,4 +1,3 @@
-import Card from 'react-bootstrap/Card';
 import UserProfileForm from '../components/UserProfileForm';
 import '../styling/UserProfilePage.css';
 import { useContext, useEffect, useState } from "react";
