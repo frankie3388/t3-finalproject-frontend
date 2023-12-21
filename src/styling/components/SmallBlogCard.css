@@ -1,0 +1,18 @@
+.small-card-titles {
+    background-color: var(--theme-color);
+    opacity: 0.58;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-bottom: 5px;
+}
+
+.small-card-title {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.small-blog-card .image {
+    height: 160px;
+    object-fit: cover;
+    width: 100%;
+}

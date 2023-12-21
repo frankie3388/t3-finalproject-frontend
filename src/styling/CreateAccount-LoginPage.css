@@ -1,0 +1,55 @@
+
+
+/* This the the styling for the orange header at the top of the Create Account and Login Pages */
+.header {
+    width: 100vw;
+    height: 13vh;
+    background-color: #FFA500;
+    opacity: 0.58;
+}
+
+/* This the the styling for the orange footer at the bottom of the Create Account and Login Pages */
+.footer {
+    width: 100vw;
+    height: 20vh;
+    background-color: #FFA500;
+    opacity: 0.58;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This ensures the container takes at least the full height of the viewport */
+}
+  
+.content-container {
+  flex: 1; /* This makes the main content take all available vertical space */
+}
+
+/* .footer {
+  background-color: #FFA500;
+  opacity: 0.58;
+  padding: 20px; Optional: Add padding to the footer */
+  /* margin-bottom: auto;  */
+  /* display: relative; */
+/* } */
+
+.create-account-title {
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  max-height: 800px;
+  max-width: 600px;
+  margin-bottom: 50px; 
+}
+
+.create-account-title h1 {
+  font-weight: bold;
+}

@@ -1,0 +1,22 @@
+.navbar-container {
+    margin: 20px 0px 0px 0px;
+    background-color: #f3c165;
+    color: var(--primary-color);
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: var(--primary-color);;
+}

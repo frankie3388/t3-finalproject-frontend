@@ -1,0 +1,20 @@
+.blog-card {
+    position: relative;
+}
+
+.card-titles {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--secondary-color);
+    opacity: 0.55;
+    border-radius: 10px;
+    padding-bottom: 5px;
+}
+
+.card-title {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
