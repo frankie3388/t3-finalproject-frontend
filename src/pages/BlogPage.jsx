@@ -18,6 +18,9 @@ function Blog() {
 
     // store blogs in useState
     const [blogs, setBlogs] = useState(null)
+
+    const [loading, setLoading] = useState(true); // Add loading state
+
     // api URL 
     const {api} = useContext(ApiContext);
 
@@ -43,6 +46,7 @@ function Blog() {
                 let responseData = await response.json();
                 console.log("Fetched data:", responseData);
                 setBlogs(responseData.Blog);
+                setLoading(false); // Set loading state to false after receiving blogs
                 console.log(responseData.Blog);
              } catch (error) {
                 console.error("Error fetching blogs:", error);
@@ -61,27 +65,32 @@ function Blog() {
                 <h2 className="blogpage-title">Blog Page</h2>
                 </Col>
             </Row>
-            {blogs &&
+            {loading ? (
+                <h2>Loading...</h2>
+            ) : (
                 <>
-               <BlogDetails 
-                    id={blogs._id}  // Make sure to include a unique key for the single item
-                    username={blogs.user.username}
-                    title={blogs.title}
-                    location={blogs.locationcity}
-                    description={blogs.body}
-                    image={blogs.imageUrl}
-                />
-                    
+                {blogs && (
+                    <BlogDetails 
+                        id={blogs._id}  // Make sure to include a unique key for the single item
+                        username={blogs.user.username}
+                        title={blogs.title}
+                        location={blogs.locationcity}
+                        description={blogs.body}
+                        image={blogs.imageUrl}
+                    />
+                )}
+                {blogs && (
                     <LikeEditDeleteBlog 
                         blogId={blogs._id}
                         userId={blogs.user._id}
                     />
-                    <CommentsSection />
-                    <GoogleMaps />
-                    <NavBar />
+                )}    
                 </>
-            }
-                
+            )}
+               
+            <CommentsSection />
+            <GoogleMaps />
+            <NavBar />  
         </Container>
     )
 }

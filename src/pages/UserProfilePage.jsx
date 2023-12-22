@@ -9,6 +9,8 @@ function UserProfile() {
         // search results 
 	const [user, setUser] = useState(null);
 
+    const [loading, setLoading] = useState(true); // Add loading state
+
     // api URL 
 	const {api} = useContext(ApiContext);
 
@@ -29,6 +31,7 @@ function UserProfile() {
 				let responseData = await response.json();
 		
 				setUser(responseData.user);
+                setLoading(false); // Set loading state to false after receiving blogs
 				console.log(responseData.user);
 			} catch (error) {
 				console.error("Error fetching user:", error);
@@ -42,20 +45,23 @@ function UserProfile() {
 
     return (
         <div className="userprofile-container">
-            
-        {user && 
-            <>
-            <h3>User Profile - {user.username}</h3>
-            <UserProfileForm
-                firstName={user.firstName}
-                lastName={user.lastName}
-                username={user.username}
-                email={user.email}
-                regionsOfInterest={user.regionsOfInterest}
-                countriesOfInterest={user.countriesOfInterest}
-            />
-            </>
-        }    
+            {loading ? (
+                <h2>Loading...</h2>
+            ) : (
+                <>
+                    {user && (<h3>User Profile - {user.username}</h3>)}
+                    {user && 
+                        <UserProfileForm
+                            firstName={user.firstName}
+                            lastName={user.lastName}
+                            username={user.username}
+                            email={user.email}
+                            regionsOfInterest={user.regionsOfInterest}
+                            countriesOfInterest={user.countriesOfInterest}
+                        />
+                    }    
+                </>
+            )}
         </div>
     )
 }
