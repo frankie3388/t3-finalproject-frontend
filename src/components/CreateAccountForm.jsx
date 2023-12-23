@@ -31,7 +31,7 @@ function CreateAccountForm() {
     return (
     <Form className="create-account-form">
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-        <Form.Label column sm={3} className="label">
+        <Form.Label column sm={3} data-testid="email-test" className="label">
           Email
         </Form.Label>
         <Col sm={9}>
@@ -44,7 +44,7 @@ function CreateAccountForm() {
       </Form.Group>
 
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-        <Form.Label column sm={3} className="label">
+        <Form.Label column sm={3} data-testid="password-test" className="label">
           Password
         </Form.Label>
         <Col sm={9}>
@@ -56,7 +56,7 @@ function CreateAccountForm() {
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3" controlId="firstname">
-        <Form.Label column sm={3} className="label">
+        <Form.Label column sm={3} data-testid="firstName-test" className="label">
           First Name
         </Form.Label>
         <Col sm={9}>
@@ -68,7 +68,7 @@ function CreateAccountForm() {
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3" controlId="lastname">
-        <Form.Label column sm={3} className="label">
+        <Form.Label column sm={3} data-testid="lastName-test" className="label">
           Last Name
         </Form.Label>
         <Col sm={9}>
@@ -80,7 +80,7 @@ function CreateAccountForm() {
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3" controlId="username">
-        <Form.Label column sm={3} className="label">
+        <Form.Label column sm={3} data-testid="username-test" className="label">
           Username
         </Form.Label>
         <Col sm={9}>
@@ -92,7 +92,7 @@ function CreateAccountForm() {
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3" controlId="regionsofinterest">
-        <Form.Label column sm={3} className="label">
+        <Form.Label column sm={3} data-testid="regionsOfInterest-test" className="label">
            Regions of Interest
         </Form.Label>
         <Col sm={9}>
@@ -104,7 +104,7 @@ function CreateAccountForm() {
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3" controlId="countriesofinterest">
-        <Form.Label column sm={3} className="label">
+        <Form.Label column sm={3} data-testid="countriesOfInterest-test" className="label">
           Countries of Interest
         </Form.Label>
         <Col sm={9}>

@@ -88,8 +88,8 @@ function Blog() {
                 </>
             )}
                
-            <CommentsSection />
-            <GoogleMaps />
+            {/* <CommentsSection />
+            <GoogleMaps /> */}
             <NavBar />  
         </Container>
     )

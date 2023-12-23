@@ -12,9 +12,6 @@ function LikeEditDeleteBlog(props) {
 
     const [activate, setActivate] = useState(false);
 
-    // // search results 
-	// const [blog, setBlog] = useState(null);
-
     // Retrieve the blog ID from the URL
     const { id } = useParams();
 
@@ -77,9 +74,9 @@ function LikeEditDeleteBlog(props) {
     
     return (
         <Row>
-            <Col>
+            {/* <Col>
                 <h6>Like</h6>
-            </Col>
+            </Col> */}
             {activate ? (
                 <Col>
                     <h6>Are you sure you want to delete blog?</h6>
