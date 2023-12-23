@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CreateAccount from './pages/CreateAccountPage';
@@ -12,7 +11,7 @@ import Blog from './pages/BlogPage';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import UserProfile from './pages/UserProfilePage';
-import Dashboard from './pages/Dashboard';
+// import Dashboard from './pages/Dashboard';
 import CreateBlog from './pages/CreateBlogPage';
 import EditBlog from './pages/EditBlogPage';
 import AuthProvider from './context/AuthContext';
@@ -36,7 +35,7 @@ root.render(
             <Route path="/bloglist/username/:username" element={<BlogListByUsername />} ></Route>
             <Route path="/blog/:id" element={<Blog />} ></Route>
             <Route path="/userprofile" element={<UserProfile />} ></Route>
-            <Route path="/dashboard" element={<Dashboard />} ></Route>
+            {/* <Route path="/dashboard" element={<Dashboard />} ></Route> */}
             <Route path="/createblog" element={<CreateBlog />} ></Route>
             <Route path="/editblog/:id" element={<EditBlog />} ></Route>
           </Routes>

@@ -30,17 +30,17 @@ function NavBar() {
       };
 
     return (
-        <Row xs={5} className="navbar-container">
+        <Row xs={4} className="navbar-container">
             <Col className="navbar-item">
                 <NavLink className="navbar-link" onClick={handleLogout} to="/" style={({isActive}) => isActive ? activeNavStyle : undefined}>
-                    <h6>Log Out</h6>
+                    <h6 data-testid="logOut-test">Log Out</h6>
                 </NavLink>
             </Col>
-            <Col className="navbar-item">
+            {/* <Col className="navbar-item">
                 <NavLink className="navbar-link" to="/dashboard" style={({isActive}) => isActive ? activeNavStyle : undefined}>
                     <h6>Dash Board</h6>
                 </NavLink>
-            </Col>
+            </Col> */}
             <Col className="navbar-item">
                 <NavLink className="navbar-link" to="/bloglist" style={({isActive}) => isActive ? activeNavStyle : undefined}>
                     <h6>Blog List</h6>
