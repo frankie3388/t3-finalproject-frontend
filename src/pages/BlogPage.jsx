@@ -5,8 +5,6 @@ import NavBar from '../components/NavBar';
 import '../styling/BlogPage.css';
 import BlogDetails from '../components/BlogDetails';
 import LikeEditDeleteBlog from '../components/LikeEditDeleteBlog';
-import CommentsSection from '../components/CommentsSection';
-import GoogleMaps from '../components/GoogleMaps';
 import { useParams } from 'react-router-dom';
 import { ApiContext } from "../context/ApiContext";
 import { useContext, useEffect, useState } from "react";
