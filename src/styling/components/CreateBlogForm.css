@@ -3,4 +3,19 @@
     opacity: 0.58;
     color: var(--primary-color);
     margin: 50px;
+    margin-bottom: 70px;
+    border-radius: 10px;
+}
+
+.create-blog-input {
+    padding: 15px;
+}
+
+.caption-create-blog {
+    margin-top: 15px;
+}
+
+.create-blog-button {
+    margin-left: 15px;
+    margin-bottom: 15px;
 }

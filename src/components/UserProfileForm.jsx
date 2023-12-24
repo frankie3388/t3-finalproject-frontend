@@ -59,7 +59,7 @@ function UserProfileForm(props) {
     return (
         <Container fluid className="userprofileform-container">
             <Form onSubmit={handleSubmit}>
-                <Row>
+                <Row className="user-profile-input user-profile-firstName">
                     <Form.Label column lg={2}>
                         First Name - {props.firstName}
                     </Form.Label>
@@ -71,8 +71,7 @@ function UserProfileForm(props) {
                         />
                     </Col>
                 </Row>
-                    <br />
-                <Row>
+                <Row className="user-profile-input">
                     <Form.Label column lg={2}>
                         Last Name - {props.lastName}
                     </Form.Label>
@@ -84,8 +83,7 @@ function UserProfileForm(props) {
                         />
                     </Col>
                 </Row>
-                    <br />
-                <Row>
+                <Row className="user-profile-input">
                     <Form.Label column lg={2}>
                         Username - {props.username}
                     </Form.Label>
@@ -97,7 +95,7 @@ function UserProfileForm(props) {
                         />
                     </Col>
                 </Row>
-                <Row>
+                <Row className="user-profile-input">
                     <Form.Label column lg={2}>
                         Password
                     </Form.Label>
@@ -109,7 +107,7 @@ function UserProfileForm(props) {
                             />
                     </Col>
                 </Row>
-                <Row>
+                <Row className="user-profile-input">
                     <Form.Label column lg={2}>
                         Email - {props.email}
                     </Form.Label>
@@ -121,7 +119,7 @@ function UserProfileForm(props) {
                             />
                     </Col>
                 </Row>
-                <Row>
+                <Row className="user-profile-input">
                     <Form.Label column lg={2}>
                         Regions of Interest - {props.regionsOfInterest}
                     </Form.Label>
@@ -133,7 +131,7 @@ function UserProfileForm(props) {
                             />
                     </Col>
                 </Row>
-                <Row>
+                <Row className="user-profile-input">
                     <Form.Label column lg={2}>
                         Countries of Interest - {props.countriesOfInterest}
                     </Form.Label>
@@ -153,7 +151,7 @@ function UserProfileForm(props) {
                         <p></p>
                     </Col>
                 </Row> */}
-                <Row>
+                <Row className="user-profile-input">
                     <Form.Group as={Row} className="mb-3">
                         <Col sm={{ span: 2, offset: 10 }}>
                         <Button 

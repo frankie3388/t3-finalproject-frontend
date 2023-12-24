@@ -1,3 +1,18 @@
 .userprofile-container {
     margin-bottom: 60px;
 }
+
+.user-profile-heading {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.user-profile-input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.user-profile-firstName {
+    padding-top: 20px;
+}

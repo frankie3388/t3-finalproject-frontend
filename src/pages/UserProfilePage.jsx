@@ -51,7 +51,7 @@ function UserProfile() {
                 <h2>Loading...</h2>
             ) : (
                 <>
-                    {user && (<h3>User Profile - {user.username}</h3>)}
+                    {user && (<h3 className="user-profile-heading">User Profile - {user.username}</h3>)}
                     {user && 
                         <UserProfileForm
                             firstName={user.firstName}

@@ -70,36 +70,36 @@ function CreateBlogForm() {
 
     return (
         <Form className="create-blog-form" onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="title">
+            <Form.Group className="mb-3 create-blog-input" controlId="title">
               <Form.Label data-testid="title-test">Title of Blog</Form.Label>
               <Form.Control type="text" name="title" placeholder="Enter title of blog" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="locationname">
+            <Form.Group className="mb-3 create-blog-input" controlId="locationname">
               <Form.Label data-testid="locationName-test">Name of Location</Form.Label>
               <Form.Control type="text" name="locationname" placeholder="Enter name of location" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="locationaddress">
+            <Form.Group className="mb-3 create-blog-input" controlId="locationaddress">
               <Form.Label data-testid="locationAddress-test">Address</Form.Label>
               <Form.Control type="text" name="locationaddress" placeholder="Enter address" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="locationcity">
+            <Form.Group className="mb-3 create-blog-input" controlId="locationcity">
               <Form.Label data-testid="locationCity-test">City</Form.Label>
               <Form.Control type="text" name="locationcity" placeholder="Enter city" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="locationcountry">
+            <Form.Group className="mb-3 create-blog-input" controlId="locationcountry">
               <Form.Label data-testid="locationCountry-test">Country</Form.Label>
               <Form.Control type="text" name="locationcountry" placeholder="Enter country" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="body">
+            <Form.Group className="mb-3 create-blog-input" controlId="body">
               <Form.Label data-testid="description-test">Description</Form.Label>
               <Form.Control type="text" name="body" placeholder="Enter description" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="imagedata">
+            <Form.Group className="mb-3 create-blog-input" controlId="imagedata">
                 <Form.Label data-testid="photo-test">Photo</Form.Label>
                 <Form.Control type="file" name="imagedata" onChange={handlePhotoChange} />
-                <Form.Control type="text" name="imagedata" value={caption} onChange={e => setCaption(e.target.value)} />
+                <Form.Control type="text" name="imagedata" className="caption-create-blog" value={caption} onChange={e => setCaption(e.target.value)} />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button className="create-blog-button" variant="primary" type="submit">
                 Post
             </Button>
         </Form>

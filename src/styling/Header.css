@@ -21,3 +21,7 @@ h1 {
     margin: 0px;
     padding: 0px;
 }
+
+.header-searchbar {
+    margin-top: 15px;
+}
