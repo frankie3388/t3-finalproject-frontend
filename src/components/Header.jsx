@@ -17,7 +17,7 @@ function Header() {
   }
 
   return (
-      <Row className="box">
+      <Row className="box header-searchbar">
         <Col xs={5} className="container-one">
           <h1>Travelling Diary</h1>
         </Col>
