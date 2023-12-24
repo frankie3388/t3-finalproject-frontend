@@ -1,6 +1,14 @@
+.small-blog-card {
+    position: relative;
+}
+
 .small-card-titles {
-    background-color: var(--theme-color);
-    opacity: 0.58;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--secondary-color);
+    opacity: 0.55;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     padding-bottom: 5px;
@@ -12,7 +20,7 @@
 }
 
 .small-blog-card .image {
-    height: 160px;
+    height: 280px;
     object-fit: cover;
     width: 100%;
 }
