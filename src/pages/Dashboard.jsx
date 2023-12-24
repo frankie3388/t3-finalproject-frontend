@@ -4,6 +4,7 @@ import SmallBlogCard from '../components/SmallBlogCard';
 import { useContext, useEffect } from "react";
 import { ApiContext } from "../context/ApiContext";
 
+// Didn't have time to implement this feature.
 function Dashboard() {
 
     // api URL 

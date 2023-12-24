@@ -10,10 +10,13 @@ import { useParams } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 
-
+// This functional component is responsible for making a fetch request to the
+// server based on the username provided in the searchbar
+// and displaying all the blogs in the database with that username.
 function BlogListByUsername() {
-    // search results 
+    // State to hold search results and loading state 
 	const [searchResults, setSearchResults] = useState([]);
+    const [loading, setLoading] = useState(true); // Add loading state
 
 	// api URL 
 	const {api} = useContext(ApiContext);
@@ -24,17 +27,21 @@ function BlogListByUsername() {
 	// route param for the username 
 	const {username} = useParams();
 
+    // Effect hook to fetch blogs based on the username
 	useEffect(() => {
 		console.log("Card search component has mounted! Making a fetch request now...");
 
 		async function apiRequest() {
 			try {
+                // Construct query parameters for the API request
                 let queryParams = new URLSearchParams({
                     q: username
                   });
 
+                  // Fetch blogs from the server based on the username
 				let response = await fetch(api + '/blog/multiple/username?' + queryParams, {
                     method: "GET",
+                    // make sure user is authenticated with jwt
                     headers: {
                       "Authorization": jwt
                     }
@@ -42,6 +49,7 @@ function BlogListByUsername() {
 				let responseData = await response.json();
 		
 				setSearchResults(responseData.data);
+                setLoading(false); // Set loading state to false after receiving blogs
 				// console.log(searchResults);
 			} catch (error) {
 				console.error("Error fetching blogs:", error);
@@ -57,43 +65,54 @@ function BlogListByUsername() {
         <Container fluid className="blog-list-container">
             <Row className="title-container">
                 <Col>
-                <h2 className="bloglist-title">Blog List - {username}</h2>
+                    <h2 className="bloglist-title">Blog List - {username}</h2>
                 </Col>
             </Row>
-            {searchResults && searchResults.length > 0 && 
-            <Row className="large-cards">
-                {/* display only the first two blog records */}
-                {searchResults.slice(0, 2).map(result => {
-                    return <Col xs={11} sm={5} lg={5} className="cards">
-                    <BlogCard 
-                        id={result._id}
-                        username={result.user.username}
-                        title={result.title}
-                        locationcity={result.locationcity}
-                        image={result.imageUrl}
-                    />
-                    </Col>
-                })}
-            </Row>
-            }
-            {searchResults && searchResults.length > 0 && 
-            <Row xs={2} md={4} className="small-cards-container">
-                {/* display all searchResults after the first two */}
-                {searchResults.slice(2).map(result => {
-                    return <Col>
-                    <SmallBlogCard 
-                        id={result._id}
-                        username={result.user.username}
-                        title={result.title}
-                        locationcity={result.locationcity}
-                        image={result.imageUrl}
-                    />
-                    </Col>
-                })}
-            </Row>
-            }
+            {/* Conditional rendering based on loading state */}
+            {loading ? (
+                <h2>Loading...</h2>
+            ) : (
+                <>
+                    {searchResults && searchResults.length > 0 ? (
+                        <Row className="large-cards">
+                            {searchResults.slice(0, 2).map(result => (
+                                <Col key={result._id} xs={11} sm={5} lg={5} className="cards">
+                                    <BlogCard
+                                        id={result._id}
+                                        username={result.user.username}
+                                        title={result.title}
+                                        locationcity={result.locationcity}
+                                        image={result.imageUrl}
+                                    />
+                                </Col>
+                            ))}
+                        </Row>
+                    ) : (
+                        <Row className="no-blogs-found">
+                            <Col>
+                                <p>No blogs found for the specified username.</p>
+                            </Col>
+                        </Row>
+                    )}
+                    {searchResults && searchResults.length > 0 && (
+                        <Row xs={2} md={4} className="small-cards-container">
+                            {searchResults.slice(2).map(result => (
+                                <Col key={result._id}>
+                                    <SmallBlogCard
+                                        id={result._id}
+                                        username={result.user.username}
+                                        title={result.title}
+                                        locationcity={result.locationcity}
+                                        image={result.imageUrl}
+                                    />
+                                </Col>
+                            ))}
+                        </Row>
+                    )}
+                </>
+            )}
         </Container>
-    )
+    );
 }
 
 export default BlogListByUsername;

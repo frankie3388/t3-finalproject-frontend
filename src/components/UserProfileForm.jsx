@@ -8,7 +8,8 @@ import { useContext } from 'react';
 import { ApiContext } from "../context/ApiContext";
 import { AuthContext } from "../context/AuthContext";
 
-
+// Functional component for UserProfileForm. It is responsible for
+// editing the user profile.
 function UserProfileForm(props) {
 
     // api URL 
@@ -17,7 +18,7 @@ function UserProfileForm(props) {
     // jwt token 
       const {jwt} = useContext(AuthContext);
 
-    // This handleSubmit function Posts the form data to the server to create the blog
+    // This handleSubmit function Posts the form data to the server to edit the user
     const handleSubmit = async (event) => {
         event.preventDefault();
     
@@ -144,14 +145,14 @@ function UserProfileForm(props) {
                             />
                     </Col>
                 </Row>
-                <Row>
+                {/* <Row>
                     <Form.Label column lg={2}>
                         Followed Users
                     </Form.Label>
                     <Col>
                         <p></p>
                     </Col>
-                </Row>
+                </Row> */}
                 <Row>
                     <Form.Group as={Row} className="mb-3">
                         <Col sm={{ span: 3, offset: 10 }}>

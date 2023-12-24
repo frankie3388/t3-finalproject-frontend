@@ -6,10 +6,10 @@ import { ApiContext } from "../context/ApiContext";
 import { AuthContext } from "../context/AuthContext";
 import { useParams } from 'react-router-dom';
 
-// This component consists of the like button, edit and delete blog buttons
+// This component consists of the edit and delete blog buttons
 // in the Blog page.
 function LikeEditDeleteBlog(props) {
-
+    // State variable to control the activation of delete confirmation
     const [activate, setActivate] = useState(false);
 
     // Retrieve the blog ID from the URL
@@ -23,16 +23,18 @@ function LikeEditDeleteBlog(props) {
 
     const navigate = useNavigate();
 
+    // Function to handle the edit button click
     const editSubmit = (event) => {
         navigate("/editblog/" + props.blogId)
     }
 
+    // Function to handle the delete button click
     const deleteSubmit = () => {
         setActivate(true);
     }
 
+    // Function to handle the confirmation of blog deletion
     const deleteSubmitConfirm = async (event) => {
-        // event.preventDefault();
 
         setActivate(false);
 
@@ -54,7 +56,6 @@ function LikeEditDeleteBlog(props) {
     
             if (response.ok) {
                 console.log("Blog deleted successfully");
-                // Additional logic if needed
             } else {
                 console.error('Failed to delete blog:', response.statusText);
                 // Handle error
@@ -63,20 +64,18 @@ function LikeEditDeleteBlog(props) {
             console.error('Error:', error);
         }
         
+        // Navigate to the blog list page after deletion
         navigate("/bloglist");
-
-        
     }
 
+    // Function to handle the cancellation of blog deletion
     const resetSubmit = () => {
         setActivate(false);
     }
     
     return (
         <Row>
-            {/* <Col>
-                <h6>Like</h6>
-            </Col> */}
+            {/* Conditional rendering based on the activation state */}
             {activate ? (
                 <Col>
                     <h6>Are you sure you want to delete blog?</h6>

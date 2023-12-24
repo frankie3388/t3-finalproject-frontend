@@ -5,14 +5,16 @@ import { useState, useContext } from 'react';
 import { ApiContext } from "../context/ApiContext";
 import { AuthContext } from "../context/AuthContext";
 
+// Functional component for creating blog form. This component is responsible for
+// creating blogs.
 function CreateBlogForm() {
   // useState for the imagedata
   const [photo, setPhoto] = useState(null);
   const [caption, setCaption] = useState("")
 
+  // Contexts for accessing API URL and JWT token
   // api URL 
 	const {api} = useContext(ApiContext);
-
   // jwt token 
 	const {jwt} = useContext(AuthContext);
 
@@ -21,7 +23,7 @@ function CreateBlogForm() {
     event.preventDefault();
 
     try {
-      // Create blog data
+      // Create blog data from form input
       const blogData = {
         title: event.target.elements.title.value,
         locationname: event.target.elements.locationname.value,
@@ -47,13 +49,11 @@ function CreateBlogForm() {
         body: formData,
         headers: {
           "Authorization": jwt,
-          // Do not set Content-Type header explicitly, let the browser handle it
         },
       });
   
       if (response.ok) {
         console.log("Image and blog data posted successfully");
-        // Additional logic if needed
       } else {
         console.error('Failed to post image and blog data:', response.statusText);
         // Handle error
@@ -63,8 +63,9 @@ function CreateBlogForm() {
     }
   };
 
+  // Function to handle changes in the selected photo
   const handlePhotoChange = (event) => {
-      setPhoto(event.target.files[0]);
+      setPhoto(event.target.files[0]); // Set the selected image file
   };
 
     return (

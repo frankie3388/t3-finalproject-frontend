@@ -1,10 +1,10 @@
+// Asynchronous function to create a new user. Expects 8 parameters.
 async function create(email, password, firstName, lastName, username, regionsOfInterest, countriesOfInterest, isAdmin=false){ 
-    console.log(email, password, firstName, lastName, username, regionsOfInterest, countriesOfInterest, isAdmin);
 
     const publicUrl = "https://travelling-diary-app-e5215403a509.herokuapp.com";
 
+    // Sending a POST request to the server to create a new user
     let result = await fetch(
-      // need to change this to 'api' from ApiContext once in production
       publicUrl + "/users/createuser",
       {
         method: "POST",
@@ -26,7 +26,6 @@ async function create(email, password, firstName, lastName, username, regionsOfI
 
     let data = await result.json();
 
-    // Need to get rid of this, just leaving it in to see that it works
     console.log(data);
 
     return data;

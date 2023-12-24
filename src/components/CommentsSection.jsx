@@ -2,7 +2,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../styling/components/CommentsSection.css'
 
-
+// Could not complete this component as we ran out of time
 function CommentsSection() {
     return (
         <Row className="comments-container">

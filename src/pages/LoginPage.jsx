@@ -6,6 +6,7 @@ import logo from '../docs/images/logo.png';
 import Image from 'react-bootstrap/Image';
 import LoginForm from '../components/LoginForm'
 
+// This component is responsible for displaying the login components.
 function Login() {
   return (
     <div className="app-container">

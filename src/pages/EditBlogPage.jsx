@@ -4,10 +4,11 @@ import { useContext, useEffect, useState } from "react";
 import { ApiContext } from "../context/ApiContext";
 import { AuthContext } from "../context/AuthContext";
 
-
+// This component is responsible for fetching data from a blog id, so that
+// the user who created the blog can edit it.
 function EditBlog() {
 
-    // search results 
+    // State to store the fetched blog data
 	const [blog, setBlog] = useState(null);
 
     const [loading, setLoading] = useState(true); // Add loading state
@@ -21,11 +22,13 @@ function EditBlog() {
     // jwt token 
 	const {jwt} = useContext(AuthContext);
 
+    // Fetch the blog data when the component mounts
     useEffect(() => {
 		console.log("Card search component has mounted! Making a fetch request now...");
 
 		async function apiRequest() {
 			try {
+                // Fetch blog data using the blog ID
 				let response = await fetch(api + '/blog/image/' + id, {
                     method: "PATCH",
                     headers: {
@@ -51,7 +54,9 @@ function EditBlog() {
         
         <div>
              <h3>Edit Blog Id - {id}</h3>
+            
             {loading ? (
+                // Display a loading message while data is being fetched
                 <h2>Loading...</h2>
             ) : (
                 <>
