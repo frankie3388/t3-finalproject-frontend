@@ -155,7 +155,7 @@ function UserProfileForm(props) {
                 </Row> */}
                 <Row>
                     <Form.Group as={Row} className="mb-3">
-                        <Col sm={{ span: 3, offset: 10 }}>
+                        <Col sm={{ span: 2, offset: 10 }}>
                         <Button 
                         variant="primary"
                         type="submit"

@@ -87,7 +87,7 @@ function BlogList() {
                             {/* display all blogs after the first two */}
                             {blogs.slice(2).map(result => {
                                 return (
-                                    <Col>
+                                    <Col className="small-cards-height">
                                         <SmallBlogCard
                                             id={result._id}
                                             username={result.user.username}
