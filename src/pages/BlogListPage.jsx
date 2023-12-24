@@ -8,18 +8,24 @@ import BlogCard from '../components/BlogCard';
 import { ApiContext } from "../context/ApiContext";
 import { AuthContext } from "../context/AuthContext";
 
+// This function component is responsible for making a fetch request to the
+// server and displaying all the blogs in the database.
 function BlogList() {
+    // State to hold the blogs and loading state
     const [blogs, setBlogs] = useState(null);
     const [loading, setLoading] = useState(true); // Add loading state
 
+    // Contexts for API URL and JWT token
     const { api } = useContext(ApiContext);
     const { jwt } = useContext(AuthContext);
 
+    // Effect hook to fetch blogs on component mount
     useEffect(() => {
         console.log("Card search component has mounted! Making a fetch request now...");
 
         async function apiRequest() {
             try {
+                // Fetch blogs from the server
                 let response = await fetch(api + "/blog/all", {
                     method: "GET",
                     headers: {
@@ -27,10 +33,12 @@ function BlogList() {
                     }
                 });
 
+                // Check for HTTP errors
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
 
+                // Parse response data and update state
                 let responseData = await response.json();
                 setBlogs(responseData.Blog);
                 setLoading(false); // Set loading state to false after receiving blogs

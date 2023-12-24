@@ -4,7 +4,8 @@ import Col from 'react-bootstrap/Col';
 import { useLocation } from 'react-router-dom'; 
 import '../styling/Header.css';
 
-
+// This funcitonal component is responsible for displaying the 'Travelling Diary' name
+// and search bar on all the pages except login and createaccount pages.
 function Header() {
 
   // This hook ensures that the Header component checks the path location

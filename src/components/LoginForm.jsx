@@ -3,11 +3,13 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import '../styling/CreateAccount-LoginForm.css';
-import { login } from '../functions/login';
+import { login } from '../functions/login'; // Function for handling login
 import { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
+// Functional component for LoginForm. This component is responsible for
+// sending a request to the server to login.
 function LoginForm() {
 
   const navigate = useNavigate();
@@ -36,14 +38,11 @@ function LoginForm() {
           <Form.Control 
             type="text" 
             placeholder="Email"
-            // name="emailInput" 
-            // id="emailInput" 
             value={email} 
             onChange={(event) => setEmail(event.target.value)}  
           />
         </Col>
       </Form.Group>
-    
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
         <Form.Label column sm={3} data-testid="password-test" className="label">
           Password
@@ -51,26 +50,26 @@ function LoginForm() {
         <Col sm={9}>
           <Form.Control 
             type="password" 
-            placeholder="Password"
-            // name="passwordInput" 
-            // id="passwordInput" 
+            placeholder="Password" 
             value={password} 
             onChange={(event) => setPassword(event.target.value)} 
           />
         </Col>
       </Form.Group>
-    
       <Form.Group as={Row} className="mb-3">
         <Col sm={{ span: 3, offset: 10 }}>
         <Button onClick={ async (event) => {
           event.preventDefault();
           try {
+            // Attempt to log in using the provided email and password with the
+            // login function from login.js file.
             const jwtData = await login(email, password);
-      
             if (jwtData.jwt) {
               // If login is successful, data.jwt will contain the JWT token
+              // and set the AuthContextProvider with the JWT token.
               loginJwt(jwtData.jwt);
-              navigate("/bloglist");
+              // Upon successful login, redirect to bloglist page.
+              navigate("/bloglist"); 
             } else if (jwtData.message) {
               console.error("Login failed:", jwtData.message);
               alert(`Login failed: ${jwtData.message}`);
@@ -99,4 +98,5 @@ function LoginForm() {
   )
 }
 
+// Exporting the LoginForm component for use in other parts of the application
 export default LoginForm;

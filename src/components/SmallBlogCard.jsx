@@ -2,6 +2,8 @@ import Card from 'react-bootstrap/Card';
 import '../styling/components/SmallBlogCard.css';
 import { Link } from 'react-router-dom';
 
+// This SmallBlogCard component displays the information fetched from the BlogList
+// component via props
 function SmallBlogCard(props) {
     return (
         <Link to={`/blog/${props.id}`}>

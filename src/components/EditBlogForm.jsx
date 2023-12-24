@@ -5,10 +5,12 @@ import Button from 'react-bootstrap/Button';
 import { useState, useContext } from 'react';
 import { ApiContext } from "../context/ApiContext";
 import { AuthContext } from "../context/AuthContext";
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; // React Router hook for accessing URL parameters
 
+// Functional component for EditBlogForm. This component is responsible for
+// editing the blog. Only the user who created the blog and admin is allowed 
+// to edit the blog.
 function EditBlogForm(props) {
-
   // useState for the imagedata
   const [photo, setPhoto] = useState(null);
   const [caption, setCaption] = useState("")
@@ -27,7 +29,7 @@ function EditBlogForm(props) {
       event.preventDefault();
   
       try {
-        // Edit blog data
+        // Edit blog data from form input
         const blogData = {
           title: event.target.elements.title.value,
           locationname: event.target.elements.locationname.value,
@@ -53,13 +55,11 @@ function EditBlogForm(props) {
           body: formData,
           headers: {
             "Authorization": jwt,
-            // Do not set Content-Type header explicitly, let the browser handle it
           },
         });
     
         if (response.ok) {
           console.log("Image and blog data edited successfully");
-          // Additional logic if needed
         } else {
           console.error('Failed to edit image and blog data:', response.statusText);
           // Handle error

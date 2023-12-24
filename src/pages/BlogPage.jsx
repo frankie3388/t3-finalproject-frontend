@@ -10,8 +10,11 @@ import { ApiContext } from "../context/ApiContext";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 
+// This functional component is reponsible for fetching the data based on the 
+// id of the blog and passing that data to the blogdetails component to display the data.
 function Blog() {
     // id used as parameter from the BlogCard.jsx file
+    // Extracting the blog id from the route parameters
     const { id } = useParams();
 
     // store blogs in useState
@@ -25,11 +28,13 @@ function Blog() {
     // jwt token 
 	const {jwt} = useContext(AuthContext);
  
+    // Effect hook to fetch the blog data based on the id
     useEffect(() => {
         console.log("Card search component has mounted! Making a fetch request now...");
 
         async function apiRequest(){
             try {
+                // Fetch blog details from the server based on the id
                 let response = await fetch(api + "/blog/" + id, {
                    method: "GET",
                    headers: {
@@ -63,10 +68,12 @@ function Blog() {
                 <h2 className="blogpage-title">Blog Page</h2>
                 </Col>
             </Row>
+            {/* Conditional rendering based on loading state */}
             {loading ? (
                 <h2>Loading...</h2>
             ) : (
                 <>
+                {/* Display BlogDetails component with fetched blog data */}
                 {blogs && (
                     <BlogDetails 
                         id={blogs._id}  // Make sure to include a unique key for the single item

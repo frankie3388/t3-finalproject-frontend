@@ -12,7 +12,6 @@ function CreateAccount() {
       <Container fluid className="header">
         <Row>
           <Col>
-            {/* Your main content goes here */}
           </Col>
         </Row>
       </Container>

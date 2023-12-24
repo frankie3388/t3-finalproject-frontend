@@ -4,6 +4,8 @@ import { useContext, useEffect, useState } from "react";
 import { ApiContext } from "../context/ApiContext";
 import { AuthContext } from "../context/AuthContext";
 
+// This funcitonal component is responsible for fetching the user profile
+// so that it can be updated by the user.
 function UserProfile() {
 
         // search results 

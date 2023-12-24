@@ -1,6 +1,5 @@
 
-// This component lets the user follow a user in the Blog Page.
-// It is used in the Blog Details Component.
+// Didn't implement this feature as ran out of time
 function FollowButton() {
     return (
         <button>Follow</button>

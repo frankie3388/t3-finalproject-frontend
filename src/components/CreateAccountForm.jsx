@@ -3,10 +3,12 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import '../styling/CreateAccount-LoginForm.css';
-import { useEffect, useState } from 'react';
-import { create } from '../functions/create-account';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react'; // React hooks for managing state and side effects
+import { create } from '../functions/create-account'; // Function to handle account creation
+import { useNavigate } from 'react-router-dom'; // React Router hook for navigation
 
+
+// This create account form component is reponsible for creating user accounts.
 function CreateAccountForm() {
 
   const navigate = useNavigate();
@@ -42,7 +44,6 @@ function CreateAccountForm() {
             onChange={(event) => setEmail(event.target.value)} />
         </Col>
       </Form.Group>
-
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
         <Form.Label column sm={3} data-testid="password-test" className="label">
           Password
@@ -115,16 +116,18 @@ function CreateAccountForm() {
             onChange={(event) => setCountriesOfInterest(event.target.value)}  />
         </Col>
       </Form.Group>
-
       <Form.Group as={Row} className="mb-3">
         <Col sm={{ span: 3, offset: 10 }}>
+          {/* This onClick event on the Create Button sends a post request 
+          to the 'users/createuser' route on the server to create the user*/}
           <Button onClick={ async (event) => {
             event.preventDefault();
             try {
+              // create function is used from the create-account.js file
               const newUser = await create(email, password, firstName, lastName, username, regionsOfInterest, countriesOfInterest);
               setUser(newUser); 
             } catch (error) {
-              console.error("Error during login:", error);
+              console.error("Error during create account:", error);
             }
           }}  
           type="submit"
@@ -137,6 +140,7 @@ function CreateAccountForm() {
       <p>Already have an account?{' '}
         <span
           className="createlink"
+          // onClick used to redirect to login page '/'
           onClick={() => navigate('/')}
         >
           Login
