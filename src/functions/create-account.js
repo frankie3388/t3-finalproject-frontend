@@ -1,7 +1,7 @@
 // Asynchronous function to create a new user. Expects 8 parameters.
 async function create(email, password, firstName, lastName, username, regionsOfInterest, countriesOfInterest, isAdmin=false){ 
 
-    const publicUrl = "https://travelling-diary-app-e5215403a509.herokuapp.com";
+    const publicUrl = "http://localhost:5000";
 
     // Sending a POST request to the server to create a new user
     let result = await fetch(

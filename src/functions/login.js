@@ -1,6 +1,6 @@
 // Asynchronous function to perform user login. Expects email and password as parameters
 async function login(email, password){ 
-    const publicUrl = "https://travelling-diary-app-e5215403a509.herokuapp.com";
+    const publicUrl = "http://localhost:5000";
 
     // Sending a POST request to the server to perform user login
     let result = await fetch(
