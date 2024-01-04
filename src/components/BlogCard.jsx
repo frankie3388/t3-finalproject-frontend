@@ -12,9 +12,11 @@ function BlogCard(props) {
         <Card className="blog-card">
           <Card.Img className="image" src={props.image} />
           <Card.Body className="card-titles">
-            <Card.Text className="card-title">{props.username}</Card.Text>
-            <Card.Text className="card-title">{props.locationcity}</Card.Text>
-            <Card.Text className="card-title">{props.title}</Card.Text>
+            <div className="grouped-card-titles">
+              <Card.Text className="card-title">Username: {props.username}</Card.Text>
+              <Card.Text className="card-title">Location: {props.locationcity}</Card.Text>
+            </div>
+            <Card.Text className="card-title">Title of Blog: {props.title}</Card.Text>
           </Card.Body>
         </Card>
       </Link>

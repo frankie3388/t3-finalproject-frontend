@@ -56,7 +56,7 @@ function BlogList() {
     return (
         <Container fluid className="blog-list-container">
             <Row className="title-container">
-                <Col>
+                <Col className="title-col">
                     <h2 className="bloglist-title">Blog List</h2>
                 </Col>
             </Row>

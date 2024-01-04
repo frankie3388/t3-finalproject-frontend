@@ -1,7 +1,6 @@
 @import "./utils/css-variables";
 
 .searchbar-container {
-    /* border: 3px solid black; */
     display: flex;
     align-items: center;
     width: 80%;
@@ -9,22 +8,41 @@
     border-radius: 10px;
     background-color: var(--theme-color);
     opacity: 0.58;
-}
-
-.searchbar-input {
-    width: 100%;
+  }
+  
+  .searchbar-input {
+    flex-grow: 1; /* Take up remaining space in the container */
     height: 100%;
     border: none;
     border-radius: 10px;
     background-color: var(--theme-color);
-}
-
-::placeholder {
+    padding-left: 10px; /* Add padding to align text with placeholder */
+  }
+  
+  ::placeholder {
     color: var(--primary-color);
     font-weight: bold;
-}
-
-.fa-magnifying-glass {
+  }
+  
+  .fa-magnifying-glass {
     padding-left: 10px;
     padding-right: 10px;
-}
+  }
+  
+  .search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer; /* Add pointer cursor to indicate it's clickable */
+    padding: 0; /* Remove padding to make the button more compact */
+  }
+  
+  /* Adjust the icon size inside the button */
+  .search-button i {
+    font-size: 1.2rem;
+  }
+  
+  /* Adjust the position of the button relative to the input */
+  .searchbar-container .search-button {
+    margin-left: -35px; /* Adjust as needed */
+  }
+  
