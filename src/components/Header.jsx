@@ -21,7 +21,7 @@ function Header() {
         <Col xs={5} className="container-one">
           <h1>Travelling Diary</h1>
         </Col>
-        <Col className="container-two">
+        <Col className="container-two searchbar">
           <Searchbar />
         </Col>
       </Row>
