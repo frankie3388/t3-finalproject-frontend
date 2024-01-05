@@ -4,3 +4,14 @@
     color: var(--primary-color);
     border-radius: 10px;
 }
+
+.position-userprofile-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.userprofile-edit-button {
+    margin-bottom: 15px;
+    background-color: var(--secondary-color);
+    border: none;
+}

@@ -153,14 +153,14 @@ function UserProfileForm(props) {
                 </Row> */}
                 <Row className="user-profile-input">
                     <Form.Group as={Row} className="mb-3">
-                        <Col sm={{ span: 2, offset: 10 }}>
-                        <Button 
-                        variant="primary"
-                        type="submit"
-                        className="edit-button"
-                        >
-                            Edit User
-                        </Button>
+                        <Col className="position-userprofile-button" sm={{ span: 2, offset: 10 }}>
+                            <Button 
+                                variant="primary"
+                                type="submit"
+                                className="userprofile-edit-button"
+                            >
+                                Edit User
+                            </Button>
                         </Col>
                     </Form.Group>
                 </Row>

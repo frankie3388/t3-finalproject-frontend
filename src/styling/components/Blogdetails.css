@@ -1,3 +1,22 @@
+@import '../utils/css-variables.css';
+
 .blogdetails-content {
-    margin-top: 30px;
+    margin: 30px 15px 30px 15px;
+}
+
+.image-blogdetails {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.blogdetails-description {
+    background-color: var(--theme-color);
+    opacity: 0.58;
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--primary-color);
+}
+
+.blogdetails-bold {
+    font-weight: bold;
 }
