@@ -16,6 +16,13 @@
 }
 
 .create-blog-button {
-    margin-left: 15px;
+    margin-right: 15px;
     margin-bottom: 15px;
+    background-color: var(--secondary-color);
+    border: none;
+}
+
+.position-create-blog-button {
+    display: flex;
+    justify-content: flex-end;
 }

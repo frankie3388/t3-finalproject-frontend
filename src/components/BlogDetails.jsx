@@ -11,26 +11,26 @@ function BlogDetails(props) {
     return (
         <Row className="blogdetails-content">
             <Col xs={12} lg={6}>
-                <h6>{props.username}</h6>
-                <h6>{props.title}</h6>
-                <h6>{props.location}</h6>
-                <p>{props.description}</p>
+                <h6><span className="blogdetails-bold">Username:</span> {props.username}</h6>
+                <h6><span className="blogdetails-bold">Title of Blog:</span> {props.title}</h6>
+                <h6><span className="blogdetails-bold">Location:</span> {props.location}</h6>
+                <p className="blogdetails-description"><span className="blogdetails-bold">Description:</span> {props.description}</p>
             </Col>
             <Col xs={12} lg={6}>
                 <Card.Img
-                    className="image"
+                    className="image-blogdetails"
                     src={props.image}
                     />
                     <Row>
                         <Col>
                             <Card.Img
-                            className="image"
+                            className="image-blogdetails"
                             src={props.image}
                             />
                         </Col>
                         <Col>
                             <Card.Img
-                            className="image"
+                            className="image-blogdetails"
                             src={props.image}
                             />
                         </Col>

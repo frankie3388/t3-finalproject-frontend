@@ -1,0 +1,31 @@
+.edit-blog-title {
+    margin: 20px 40px 20px 40px;
+}
+
+.edit-blog-username {
+    margin: 10px 40px 10px 40px;
+}
+
+.edit-blog-form {
+    background-color: var(--theme-color);
+    opacity: 0.58;
+    color: var(--primary-color);
+    margin: 30px 40px 70px 40px;
+    border-radius: 10px;
+}
+
+.edit-blog-input {
+    padding: 15px;
+}
+
+.position-edit-blog-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit-blog-save-button {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    background-color: var(--secondary-color);
+    border: none;
+}
