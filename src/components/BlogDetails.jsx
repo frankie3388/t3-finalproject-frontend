@@ -1,6 +1,7 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import '../styling/components/Blogdetails.css';
 
 // The Blog details will display the title of the blog, username,
 // location, description, and the images for the blog in the BlogPage file
@@ -8,7 +9,7 @@ import Card from 'react-bootstrap/Card';
 function BlogDetails(props) {
 
     return (
-        <Row>
+        <Row className="blogdetails-content">
             <Col xs={12} lg={6}>
                 <h6>{props.username}</h6>
                 <h6>{props.title}</h6>

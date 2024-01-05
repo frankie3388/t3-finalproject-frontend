@@ -30,4 +30,7 @@ h1 {
     .container-one {
         display: none;
     }
+    .searchbar {
+        height: 40px;
+    }
 }

@@ -2,7 +2,6 @@
 
 
 .blog-list-container {
-    margin-top: 20px;
     padding-right: 0px;
     padding-left: 0px;
     margin-bottom: 60px;
@@ -42,6 +41,6 @@
         align-items: center;
     }
     .bloglist-title {
-        margin: 40px 40px 30px 40px;
+        margin: 40px 40px 20px 40px;
     }
 }
