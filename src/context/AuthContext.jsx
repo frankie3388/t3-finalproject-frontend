@@ -32,7 +32,6 @@
 
 
 import { createContext } from 'react';
-import { useState } from 'react';
 import { useLocalStorage } from 'react-use';
 
 // Creating a context for authentication-related data (jwt)
