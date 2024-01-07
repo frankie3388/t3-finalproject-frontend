@@ -5,6 +5,7 @@ import { useState, useContext } from 'react';
 import { ApiContext } from "../context/ApiContext";
 import { AuthContext } from "../context/AuthContext";
 import { useParams } from 'react-router-dom';
+import '../styling/components/LikeEditDeleteBlog.css'
 
 // This component consists of the edit and delete blog buttons
 // in the Blog page.
@@ -74,19 +75,19 @@ function LikeEditDeleteBlog(props) {
     }
     
     return (
-        <Row>
+        <Row className="edit-delete-buttons">
             {/* Conditional rendering based on the activation state */}
             {activate ? (
-                <Col>
+                <Col className="edit-delete-position">
                     <h6>Are you sure you want to delete blog?</h6>
-                    <button onClick={deleteSubmitConfirm}>Yes</button>
-                    <button onClick={resetSubmit}>No</button>
+                    <button className="delete-button" onClick={deleteSubmitConfirm}>Yes</button>
+                    <button className="delete-button" onClick={resetSubmit}>No</button>
                 </Col>
             )
             :
-            <Col>
-                <button onClick={editSubmit}>Edit Blog</button>
-                <button onClick={deleteSubmit}>Delete Blog</button>
+            <Col className="edit-delete-position">
+                <button className="edit-button" onClick={editSubmit}>Edit Blog</button>
+                <button className="edit-button" onClick={deleteSubmit}>Delete Blog</button>
             </Col>
             } 
         </Row>

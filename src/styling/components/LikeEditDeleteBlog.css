@@ -1,0 +1,29 @@
+@import '../utils/css-variables.css';
+
+.edit-delete-buttons {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.edit-button {
+    background-color: var(--theme-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.edit-delete-position {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.delete-button {
+    background-color: var(--theme-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    margin: 5px;
+}

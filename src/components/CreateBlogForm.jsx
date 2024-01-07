@@ -99,9 +99,11 @@ function CreateBlogForm() {
                 <Form.Control type="file" name="imagedata" onChange={handlePhotoChange} />
                 <Form.Control type="text" name="imagedata" className="caption-create-blog" value={caption} onChange={e => setCaption(e.target.value)} />
             </Form.Group>
-            <Button className="create-blog-button" variant="primary" type="submit">
+            <div className="position-create-blog-button">
+              <Button className="create-blog-button" variant="primary" type="submit">
                 Post
-            </Button>
+              </Button>
+            </div>
         </Form>
     )
 }

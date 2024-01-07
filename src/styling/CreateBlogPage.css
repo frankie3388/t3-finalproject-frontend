@@ -1,4 +1,13 @@
 .create-blog-heading {
     margin-top: 40px;
     padding-left: 10px;
+    margin-left: 40px;
+}
+
+@media (max-width: 450px) {
+    .create-blog-heading {
+        text-align: center;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
 }
