@@ -7,8 +7,7 @@ export const ApiContext = createContext(null)
 export default function ApiProvider({children}){
 
     // State to manage the API URL
-	// const [apiUrl, setApiUrl] = useState("https://travelling-diary-app-e5215403a509.herokuapp.com");
-	const [apiUrl, setApiUrl] = useState("http://localhost:5000");
+	const [apiUrl, setApiUrl] = useState("https://forked-travelling-diary-a7e4a987a53d.herokuapp.com");
 
 	// Return the ApiContext.Provider with the provided API data
 	return (
