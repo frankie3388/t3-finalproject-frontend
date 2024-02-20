@@ -12,7 +12,7 @@ import { useParams } from 'react-router-dom'; // React Router hook for accessing
 // to edit the blog.
 function EditBlogForm(props) {
   // useState for the imagedata
-  const [photo, setPhoto] = useState(null);
+  const [photos, setPhotos] = useState(null);
   const [caption, setCaption] = useState("")
 
   // api URL 
@@ -41,8 +41,13 @@ function EditBlogForm(props) {
     
         // Create FormData for image submission
         const formData = new FormData();
-        formData.append("image", photo);
+        
         formData.append("caption", caption);
+
+        // Append each selected image to FormData
+        for (let i = 0; i < photos.length; i++) {
+          formData.append("images", photos[i]);
+        }
     
         // Append blog data to FormData
         for (const key in blogData) {
@@ -71,7 +76,7 @@ function EditBlogForm(props) {
 
 
   const handlePhotoChange = (event) => {
-    setPhoto(event.target.files[0]);
+    setPhotos(event.target.files);
   };
     return (
         <Form className="edit-blog-form" onSubmit={handleSubmit}>
@@ -101,7 +106,7 @@ function EditBlogForm(props) {
             </Form.Group>
             <Form.Group className="mb-3 edit-blog-input" controlId="imagedata">
                 <Form.Label>Photo</Form.Label>
-                <Form.Control type="file" name="imagedata" onChange={handlePhotoChange} />
+                <Form.Control type="file" name="imagedata" multiple onChange={handlePhotoChange} />
                 <Form.Control type="text" name="imagedata" value={caption} onChange={e => setCaption(e.target.value)} />
             </Form.Group>
             <div className="position-edit-blog-button">

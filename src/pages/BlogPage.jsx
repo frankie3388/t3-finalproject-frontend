@@ -81,7 +81,7 @@ function Blog() {
                         title={blogs.title}
                         location={blogs.locationcity}
                         description={blogs.body}
-                        image={blogs.imageUrl}
+                        images={blogs.imageUrls}
                     />
                 )}
                 {blogs && (
