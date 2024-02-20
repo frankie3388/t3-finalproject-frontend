@@ -1,6 +1,5 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import '../styling/components/Blogdetails.css';
@@ -22,7 +21,7 @@ function BlogDetails(props) {
                 <Carousel>
                     {props.images.map((image, index) => (
                         <div key={index} className="carousel-image-container">
-                            <img src={image} alt={`Image ${index + 1}`} className="carousel-image" />
+                            <img src={image} alt={`${index + 1}`} className="carousel-image" />
                         </div>
                     ))}
                 </Carousel>
