@@ -4,10 +4,10 @@
     margin: 30px 15px 30px 15px;
 }
 
-.image-blogdetails {
+/* .image-blogdetails {
     border-radius: 10px;
     margin-bottom: 10px;
-}
+} */
 
 .blogdetails-description {
     background-color: var(--theme-color);
@@ -19,4 +19,18 @@
 
 .blogdetails-bold {
     font-weight: bold;
+}
+
+.carousel-image-container {
+    overflow: hidden;
+    border-radius: 10px;
+    height: 600px;
+    
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
 }
