@@ -1,5 +1,6 @@
 .blog-card {
     position: relative;
+    margin-top: 15px;
 }
 
 .card-titles {
@@ -8,9 +9,10 @@
     left: 0;
     right: 0;
     background-color: var(--secondary-color);
-    opacity: 0.55;
+    opacity: 0.68;
     border-radius: 10px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
+    font-weight: bold;
 }
 
 .card-title {
@@ -18,3 +20,13 @@
     color: var(--primary-color);
 }
 
+.grouped-card-titles {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-card .image {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+}

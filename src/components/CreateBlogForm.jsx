@@ -9,7 +9,7 @@ import { AuthContext } from "../context/AuthContext";
 // creating blogs.
 function CreateBlogForm() {
   // useState for the imagedata
-  const [photo, setPhoto] = useState(null);
+  const [photos, setPhotos] = useState(null);
   const [caption, setCaption] = useState("")
 
   // Contexts for accessing API URL and JWT token
@@ -34,9 +34,15 @@ function CreateBlogForm() {
       };
   
       // Create FormData for image submission
-      const formData = new FormData();
-      formData.append("image", photo);
-      formData.append("caption", caption);
+    const formData = new FormData();
+
+    // Append caption and other data
+    formData.append("caption", caption);
+
+    // Append each selected image to FormData
+    for (let i = 0; i < photos.length; i++) {
+      formData.append("images", photos[i]);
+    }
   
       // Append blog data to FormData
       for (const key in blogData) {
@@ -65,7 +71,7 @@ function CreateBlogForm() {
 
   // Function to handle changes in the selected photo
   const handlePhotoChange = (event) => {
-      setPhoto(event.target.files[0]); // Set the selected image file
+      setPhotos(event.target.files); // Set the selected image file
   };
 
     return (
@@ -96,12 +102,14 @@ function CreateBlogForm() {
             </Form.Group>
             <Form.Group className="mb-3 create-blog-input" controlId="imagedata">
                 <Form.Label data-testid="photo-test">Photo</Form.Label>
-                <Form.Control type="file" name="imagedata" onChange={handlePhotoChange} />
+                <Form.Control type="file" name="images" multiple onChange={handlePhotoChange} />
                 <Form.Control type="text" name="imagedata" className="caption-create-blog" value={caption} onChange={e => setCaption(e.target.value)} />
             </Form.Group>
-            <Button className="create-blog-button" variant="primary" type="submit">
+            <div className="position-create-blog-button">
+              <Button className="create-blog-button" variant="primary" type="submit">
                 Post
-            </Button>
+              </Button>
+            </div>
         </Form>
     )
 }

@@ -2,7 +2,6 @@
 
 
 .blog-list-container {
-    margin-top: 20px;
     padding-right: 0px;
     padding-left: 0px;
     margin-bottom: 60px;
@@ -11,6 +10,7 @@
 .bloglist-title {
     color: var(--secondary-color);
     margin: 40px 0px 30px 40px;
+    font-weight: bold;
 }
 
 .title-container {
@@ -32,4 +32,15 @@
 
 .small-cards-container {
     margin: 30px 20px 0px 20px;
+}
+
+@media (max-width: 450px) {
+    .title-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .bloglist-title {
+        margin: 40px 40px 20px 40px;
+    }
 }

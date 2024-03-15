@@ -1,4 +1,5 @@
 // Asynchronous function to perform user login. Expects email and password as parameters
+
 async function login(email, password) {
   let apiUrl;
 

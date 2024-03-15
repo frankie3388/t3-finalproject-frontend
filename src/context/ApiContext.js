@@ -10,7 +10,7 @@ export default function ApiProvider({children}){
 	const defaultApiUrl = isDevelopment
 	  ? 'http://localhost:5000' // Replace with your actual local server port
 	  : 'https://forked-travelling-diary-a7e4a987a53d.herokuapp.com';
-
+  
 	// State to manage the API URL
 	const [apiUrl, setApiUrl] = useState(defaultApiUrl);
 	

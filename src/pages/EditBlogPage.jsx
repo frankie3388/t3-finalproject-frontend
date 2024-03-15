@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useContext, useEffect, useState } from "react";
 import { ApiContext } from "../context/ApiContext";
 import { AuthContext } from "../context/AuthContext";
+import '../styling/EditBlogPage.css'
 
 // This component is responsible for fetching data from a blog id, so that
 // the user who created the blog can edit it.
@@ -53,7 +54,7 @@ function EditBlog() {
     return (
         
         <div>
-             <h3>Edit Blog Id - {id}</h3>
+             <h3 className="edit-blog-title">Edit Blog Id - {id}</h3>
             
             {loading ? (
                 // Display a loading message while data is being fetched
@@ -61,7 +62,7 @@ function EditBlog() {
             ) : (
                 <>
                     {blog && blog.user && (
-                        <h5>{blog.user.username}</h5>
+                        <h5 className="edit-blog-username">{blog.user.username}</h5>
                     )}
                     {blog && blog.user  ? (
                         <EditBlogForm 

@@ -40,6 +40,7 @@ function Searchbar() {
             <button 
                 type="submit"
                 onClick={handleSubmit}
+                className="search-button"
             >
                 <i  className="fa-solid fa-magnifying-glass"></i>
             </button>

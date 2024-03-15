@@ -56,7 +56,7 @@ function BlogList() {
     return (
         <Container fluid className="blog-list-container">
             <Row className="title-container">
-                <Col>
+                <Col className="title-col">
                     <h2 className="bloglist-title">Blog List</h2>
                 </Col>
             </Row>
@@ -75,7 +75,7 @@ function BlogList() {
                                             username={result.user.username}
                                             title={result.title}
                                             locationcity={result.locationcity}
-                                            image={result.imageUrl}
+                                            image={result.imageUrls[0]}
                                         />
                                     </Col>
                                 );
@@ -93,7 +93,7 @@ function BlogList() {
                                             username={result.user.username}
                                             title={result.title}
                                             locationcity={result.locationcity}
-                                            image={result.imageUrl}
+                                            image={result.imageUrls[0]}
                                         />
                                     </Col>
                                 );

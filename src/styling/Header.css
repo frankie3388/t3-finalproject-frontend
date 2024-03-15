@@ -25,3 +25,12 @@ h1 {
 .header-searchbar {
     margin-top: 15px;
 }
+
+@media (max-width: 450px) {
+    .container-one {
+        display: none;
+    }
+    .searchbar {
+        height: 40px;
+    }
+}
