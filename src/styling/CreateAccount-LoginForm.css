@@ -32,3 +32,10 @@ button.create-button {
 .createlink:hover {
     cursor: pointer;
 }
+
+.error-message {
+    color: #FFA500;
+    font-weight: bold;
+    font-size: 28px;
+    font-family: "Times New Roman", Times, serif;
+}

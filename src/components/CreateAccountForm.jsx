@@ -22,12 +22,23 @@ function CreateAccountForm() {
     const [username, setUsername] = useState("");
     const [regionsOfInterest, setRegionsOfInterest] = useState("");
     const [countriesOfInterest, setCountriesOfInterest] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
   
   
     // This useEffect shows that the user was created
     useEffect(() => {
       console.log(`Created account:\n${user}`);
-      
+      // Check if user is not null and it has an error property
+      if (user && user.error) {
+        setErrorMessage(user.error);
+      } else if (user) {
+        setErrorMessage("Successfully created account. Redirecting to Login page....")
+        setTimeout(() => {
+          // Redirect to another page upon successful user creation after 3 seconds
+          navigate('/'); // Replace '/success' with the path you want to redirect to
+        }, 3000);
+      }
+    // eslint-disable-next-line
     }, [user]);
   
     return (
@@ -42,6 +53,9 @@ function CreateAccountForm() {
             placeholder="Email"
             value={email} 
             onChange={(event) => setEmail(event.target.value)} />
+          {/* Ternary operation - to display error message if email or username exists */}
+          {user && user.error ? <Form.Label className="label">{user.error}</Form.Label> : null}
+            
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
@@ -90,6 +104,9 @@ function CreateAccountForm() {
             placeholder="Username"
             value={username} 
             onChange={(event) => setUsername(event.target.value)}  />
+
+          {/* Ternary operation - to display error message if email or username exists */}
+          {user && user.error ? <Form.Label className="label">{user.error}</Form.Label> : null}
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3" controlId="regionsofinterest">
@@ -122,13 +139,9 @@ function CreateAccountForm() {
           to the 'users/createuser' route on the server to create the user*/}
           <Button onClick={ async (event) => {
             event.preventDefault();
-            try {
               // create function is used from the create-account.js file
               const newUser = await create(email, password, firstName, lastName, username, regionsOfInterest, countriesOfInterest);
               setUser(newUser); 
-            } catch (error) {
-              console.error("Error during create account:", error);
-            }
           }}  
           type="submit"
           className="create-button"
@@ -146,6 +159,8 @@ function CreateAccountForm() {
           Login
         </span>
       </p>
+      {/* Message to be displayed if an account has been created or not */}
+      {errorMessage && <Form.Label className="error-message">{errorMessage}</Form.Label>}
     </Form>
     )
 }
