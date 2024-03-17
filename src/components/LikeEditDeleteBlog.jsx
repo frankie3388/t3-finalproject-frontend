@@ -12,6 +12,8 @@ import '../styling/components/LikeEditDeleteBlog.css'
 function LikeEditDeleteBlog(props) {
     // State variable to control the activation of delete confirmation
     const [activate, setActivate] = useState(false);
+    // Add state for deletion status
+    const [deletionStatus, setDeletionStatus] = useState(null); // Add state for deletion status
 
     // Retrieve the blog ID from the URL
     const { id } = useParams();
@@ -56,17 +58,20 @@ function LikeEditDeleteBlog(props) {
             console.log('Delete Response:', response);
     
             if (response.ok) {
-                console.log("Blog deleted successfully");
+                setDeletionStatus('success'); // Set deletion status to success
+                setTimeout(() => {
+                    navigate("/bloglist");
+                }, 3000)
             } else {
-                console.error('Failed to delete blog:', response.statusText);
-                // Handle error
+                setDeletionStatus('error'); // Set deletion status to error
             }
         } catch (error) {
             console.error('Error:', error);
+            setDeletionStatus('error'); // Set deletion status to error
         }
         
-        // Navigate to the blog list page after deletion
-        navigate("/bloglist");
+        // // Navigate to the blog list page after deletion
+        // navigate("/bloglist");
     }
 
     // Function to handle the cancellation of blog deletion
@@ -89,7 +94,19 @@ function LikeEditDeleteBlog(props) {
                 <button className="edit-button" onClick={editSubmit}>Edit Blog</button>
                 <button className="edit-button" onClick={deleteSubmit}>Delete Blog</button>
             </Col>
-            } 
+            }
+
+            {/* Conditional rendering for deletion status message */}
+            {deletionStatus === 'success' && (
+                <div className="deletion-status">
+                    <p className="deletion-message">Blog deleted successfully!</p>
+                </div>
+            )}
+            {deletionStatus === 'error' && (
+                <div className="deletion-status">
+                    <p>Failed to delete blog. Please try again later.</p>
+                </div>
+            )}
         </Row>
     )
 }

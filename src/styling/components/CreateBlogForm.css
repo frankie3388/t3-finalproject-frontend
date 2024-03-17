@@ -26,3 +26,9 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.success-fail-blog {
+    font-weight: bold;
+    font-size: 28px;
+    padding: 0px 10px 10px 10px;
+}

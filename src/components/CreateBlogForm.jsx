@@ -8,6 +8,9 @@ import { AuthContext } from "../context/AuthContext";
 // Functional component for creating blog form. This component is responsible for
 // creating blogs.
 function CreateBlogForm() {
+  // useState for success or fail message
+  const [message, setMessage] = useState("")
+
   // useState for the imagedata
   const [photos, setPhotos] = useState(null);
   const [caption, setCaption] = useState("")
@@ -60,6 +63,7 @@ function CreateBlogForm() {
   
       if (response.ok) {
         console.log("Image and blog data posted successfully");
+        setMessage("Successfully created blog!")
       } else {
         console.error('Failed to post image and blog data:', response.statusText);
         // Handle error
@@ -110,6 +114,7 @@ function CreateBlogForm() {
                 Post
               </Button>
             </div>
+            <Form.Label className="success-fail-blog">{message}</Form.Label>
         </Form>
     )
 }

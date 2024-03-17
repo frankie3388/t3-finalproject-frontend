@@ -1,3 +1,7 @@
+# Travelling Diary Documentation Link
+
+Click this link to see the documentation for Travelling Diary App [Click here](https://github.com/frankie3388/t3-finalproject-documentation)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

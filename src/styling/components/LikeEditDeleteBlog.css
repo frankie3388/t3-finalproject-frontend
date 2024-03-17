@@ -27,3 +27,14 @@
     border-radius: 10px;
     margin: 5px;
 }
+
+.deletion-status {
+    font-weight: bold;
+    font-size: 28px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+.deletion-message {
+    text-align: center;
+}
