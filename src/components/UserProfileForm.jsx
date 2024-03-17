@@ -4,13 +4,15 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import '../styling/components/UserProfileForm.css';
 import Button from 'react-bootstrap/Button';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { ApiContext } from "../context/ApiContext";
 import { AuthContext } from "../context/AuthContext";
 
 // Functional component for UserProfileForm. It is responsible for
 // editing the user profile.
 function UserProfileForm(props) {
+    // useState for success or fail message
+    const [message, setMessage] = useState("")
 
     // api URL 
 	const {api} = useContext(ApiContext);
@@ -46,6 +48,7 @@ function UserProfileForm(props) {
       
           if (response.ok) {
             console.log("User updated successfully");
+            setMessage("Successfully edited user profile")
             // Additional logic if needed
           } else {
             console.error('Failed to update user:', response.statusText);
@@ -163,6 +166,7 @@ function UserProfileForm(props) {
                             </Button>
                         </Col>
                     </Form.Group>
+                    <Form.Label className="success-fail-blog">{message}</Form.Label>
                 </Row>
             </Form>
         </Container>

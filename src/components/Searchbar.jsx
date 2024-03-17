@@ -8,7 +8,7 @@ import { useNavigate } from "react-router";
 function Searchbar() {
 
     // State to manage the input value in the search bar
-    const [input, setInput] = useState();
+    const [input, setInput] = useState("");
 
     const navigate = useNavigate()
 

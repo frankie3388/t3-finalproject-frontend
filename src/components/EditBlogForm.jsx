@@ -11,8 +11,11 @@ import { useParams } from 'react-router-dom'; // React Router hook for accessing
 // editing the blog. Only the user who created the blog and admin is allowed 
 // to edit the blog.
 function EditBlogForm(props) {
+  // useState for success or fail message
+  const [message, setMessage] = useState("")
+
   // useState for the imagedata
-  const [photos, setPhotos] = useState(null);
+  const [photos, setPhotos] = useState(0);
   const [caption, setCaption] = useState("")
 
   // api URL 
@@ -65,6 +68,7 @@ function EditBlogForm(props) {
     
         if (response.ok) {
           console.log("Image and blog data edited successfully");
+          setMessage("Successfully edited blog")
         } else {
           console.error('Failed to edit image and blog data:', response.statusText);
           // Handle error
@@ -75,9 +79,13 @@ function EditBlogForm(props) {
     };
 
 
-  const handlePhotoChange = (event) => {
-    setPhotos(event.target.files);
-  };
+    const handlePhotoChange = (event) => {
+      const files = event.target.files;
+      if (files) {
+        setPhotos(files);
+      }
+    };
+    
     return (
         <Form className="edit-blog-form" onSubmit={handleSubmit}>
             <Form.Group className="mb-3 edit-blog-input" controlId="">
@@ -114,7 +122,7 @@ function EditBlogForm(props) {
                 Save
               </Button>
             </div>
-            
+            <Form.Label className="success-fail-blog">{message}</Form.Label>
         </Form>
     )
 }

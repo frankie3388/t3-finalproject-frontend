@@ -82,7 +82,7 @@ function BlogListByUsername() {
                                         username={result.user.username}
                                         title={result.title}
                                         locationcity={result.locationcity}
-                                        image={result.imageUrl}
+                                        image={result.imageUrls[0]}
                                     />
                                 </Col>
                             ))}
@@ -103,7 +103,7 @@ function BlogListByUsername() {
                                         username={result.user.username}
                                         title={result.title}
                                         locationcity={result.locationcity}
-                                        image={result.imageUrl}
+                                        image={result.imageUrls[0]}
                                     />
                                 </Col>
                             ))}
